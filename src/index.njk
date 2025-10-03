@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 title: Local Roots. Global Vision.
 hero:
-  heading: "Inspired by Nature. Built for Life. Ready for Investment."
+  heading: "Inspired by nature, built for life"
   subheading: "Quinta do Paço do Infante in Amora, Seixal offers 25,000 m² of developable area, full planning documentation, and a heritage landmark poised for modern living on Lisbon’s south bank."
   ctas:
     primary:
@@ -30,15 +30,24 @@ pillars:
     url: "/about/#leadership"
 ---
 <section class="hero">
-  <div class="container">
-    <h1>
-      <span class="hero-line">Waterfront Heritage. Future-Ready Living.</span>
-      <span class="hero-line">Lisbon’s Next Axis. Your Investment Today.</span>
-    </h1>
-    <p>{{ hero.subheading }}</p>
-    <div class="btn-group">
-      <a class="btn btn-primary" href="{{ hero.ctas.primary.url }}">{{ hero.ctas.primary.label }}</a>
-      <a class="btn btn-secondary" href="{{ hero.ctas.secondary.url }}">{{ hero.ctas.secondary.label }}</a>
+  <div class="container hero__body">
+    {% set taglineParts = site.taglineLines or [site.tagline] %}
+    <div class="hero__intro">
+      <h1 class="hero__tagline">
+        <span class="hero__tagline-line">{{ taglineParts[0] }}</span>
+        {% if taglineParts | length > 1 %}
+        <span class="hero__tagline-line hero__tagline-line--accent">{{ taglineParts[1] }}</span>
+        {% endif %}
+      </h1>
+      <p>{{ hero.subheading }}</p>
+      <div class="hero__chips">
+        <span class="hero__chip">190,000 m² waterfront estate</span>
+        <span class="hero__chip">Seixal · Lisbon South Bank</span>
+      </div>
+      <div class="btn-group">
+        <a class="btn btn-primary" href="{{ hero.ctas.primary.url }}">{{ hero.ctas.primary.label }}</a>
+        <a class="btn btn-secondary" href="{{ hero.ctas.secondary.url }}">{{ hero.ctas.secondary.label }}</a>
+      </div>
     </div>
   </div>
 </section>
