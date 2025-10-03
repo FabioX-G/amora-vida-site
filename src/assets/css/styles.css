@@ -188,19 +188,25 @@ img {
   .top-nav__inner {
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
   }
 
   .top-nav__links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    padding: 6px 12px;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 4px 6px;
+    overflow-x: auto;
+    width: calc(100% - 12px);
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
 
   .top-nav__link {
-    padding: 8px 16px;
+    padding: 6px 14px;
+    flex: 0 0 auto;
+    scroll-snap-align: center;
   }
 
   .top-nav__brand-text {
@@ -210,29 +216,13 @@ img {
 
 @media (max-width: 640px) {
   .top-nav__links {
-    display: inline-flex;
-    overflow-x: auto;
-    gap: 10px;
-    padding: 6px 8px;
-    width: 100%;
-    justify-content: flex-start;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .top-nav__links::-webkit-scrollbar {
-    height: 4px;
-  }
-
-  .top-nav__links::-webkit-scrollbar-thumb {
-    background: rgba(0, 219, 224, 0.32);
-    border-radius: 999px;
+    gap: 8px;
+    padding: 4px 6px;
   }
 
   .top-nav__link {
-    flex: 0 0 auto;
-    scroll-snap-align: center;
-    min-width: 128px;
+    padding: 6px 12px;
+    min-width: 120px;
   }
 }
 
