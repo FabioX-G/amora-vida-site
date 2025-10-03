@@ -1,0 +1,44 @@
+---
+layout: layouts/base.njk
+title: Contact & Investor Relations
+description: "Connect with Amora Vida’s leadership to request detailed information about Quinta do Palácio do Infante."
+---
+<section class="section section--surface">
+  <div class="container" style="display:grid;gap:24px;">
+    <div class="section-heading">Contact</div>
+    <h1 class="section-title">Talk Directly with Our Leadership</h1>
+    <p>Engage with Amora Vida’s team to align your investment thesis with a turnkey waterfront project. We respond to qualified inquiries within one business day and provide access to our diligence room under NDA.</p>
+  </div>
+</section>
+
+<section class="section section--surface-alt">
+  <div class="container" style="display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:start;">
+    <div>
+      <h2 class="section-title" style="font-size:1.6rem;">Investor Relations</h2>
+      <p><strong style="color:#fff;">Email:</strong> <a href="mailto:info@amora-vida.com">info@amora-vida.com</a></p>
+      <p><strong style="color:#fff;">Phone:</strong> <a href="tel:+351210000000">+351 21 000 0000</a></p>
+      <p><strong style="color:#fff;">WhatsApp:</strong> <a href="https://wa.me/351926601579" target="_blank" rel="noopener">+351 926 601 579</a></p>
+      <p><strong style="color:#fff;">Offices:</strong> Lisbon Headquarters | Seixal Site Office | Macau Representation</p>
+      <p><strong style="color:#fff;">Compliance:</strong> Information reserved for qualified investors; NDAs available upon request.</p>
+    </div>
+    <div>
+      <h2 id="site-visit" class="section-title" style="font-size:1.6rem;">Request Details</h2>
+      {% include "partials/lead-form.njk" %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--primary">
+  <div class="container" style="display:grid;gap:24px;">
+    <div>
+      <div class="section-heading">Newsletter</div>
+      <h2 class="section-title">Join Investor Updates</h2>
+      <p>Receive quarterly updates on Lisbon South Bank developments, market insights, and new opportunities.</p>
+    </div>
+    <form action="https://example.com/newsletter" method="post" style="display:grid;gap:12px;max-width:480px;">
+      <label for="newsletter-email">Email</label>
+      <input id="newsletter-email" name="email" type="email" required>
+      <button class="btn btn-secondary" type="submit" style="justify-self:start;">Subscribe</button>
+    </form>
+  </div>
+</section>

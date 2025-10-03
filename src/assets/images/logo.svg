@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" aria-labelledby="logoTitle logoDesc" role="img">
+  <title id="logoTitle">Amora Vida logomark</title>
+  <desc id="logoDesc">Stylised letter A formed by white and aqua geometric blades.</desc>
+  <defs>
+    <linearGradient id="bladeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00DBE0" />
+      <stop offset="100%" stop-color="#0BB0C2" />
+    </linearGradient>
+  </defs>
+  <g transform="translate(30 30)">
+    <path d="M18 168 L72 32 C80 12 110 12 118 32 L118 32 C123 45 122 60 116 72 L70 168 Z" fill="#FFFFFF" />
+    <path d="M118 72 L174 72 C194 72 206 94 196 112 L164 168 L108 168 Z" fill="#FFFFFF" opacity="0.92" />
+    <path d="M96 168 L158 168 C179 168 192 190 182 208 L180 212 L78 212 L96 168 Z" fill="url(#bladeGradient)" />
+  </g>
+</svg>

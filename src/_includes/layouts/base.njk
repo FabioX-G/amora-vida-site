@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} · {% endif %}Amora Vida</title>
+  <meta name="description" content="Turnkey waterfront development opportunity at Quinta do Palácio do Infante, Amora, Seixal – presented by Amora Vida.">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+  {% include "partials/site-header.njk" %}
+  <main>
+    {{ content | safe }}
+  </main>
+  {% include "partials/site-footer.njk" %}
+</body>
+</html>
