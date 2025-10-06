@@ -11,7 +11,9 @@
   display: flex;
   gap: clamp(20px, 4vw, 32px);
   flex-wrap: nowrap;
-  padding: clamp(24px, 4vw, 36px) clamp(12px, 3vw, 20px) clamp(32px, 5vw, 44px);
+  padding-block: clamp(24px, 4vw, 36px) clamp(32px, 5vw, 44px);
+  padding-inline: clamp(32px, 6vw, 60px);
+  scroll-padding-inline: clamp(32px, 6vw, 60px);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
@@ -36,6 +38,7 @@
 .team-card {
   position: relative;
   scroll-snap-align: center;
+  scroll-snap-stop: always;
   min-height: clamp(340px, 48vw, 420px);
   border-radius: 20px;
   background: linear-gradient(160deg, rgba(18, 20, 40, 0.92), rgba(12, 14, 32, 0.84));
@@ -111,11 +114,10 @@
 
 .team-card__email {
   margin: 0;
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   color: rgba(232, 236, 255, 0.82);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .team-card__email a {
@@ -132,7 +134,9 @@
 @media (max-width: 720px) {
   .team-gallery {
     grid-auto-columns: minmax(240px, 82vw);
-    padding: clamp(20px, 6vw, 32px) clamp(14px, 6vw, 24px) clamp(42px, 12vw, 56px);
+    padding-block: clamp(20px, 6vw, 32px) clamp(42px, 12vw, 56px);
+    padding-inline: clamp(24px, 8vw, 40px);
+    scroll-padding-inline: clamp(24px, 8vw, 40px);
   }
 }
 
@@ -148,13 +152,18 @@
    About → Leadership flip cards (page-scoped 3D logic lives under
    #team-gallery so we avoid duplicate/competing transforms.
    ===================================================================== */
-#team-gallery { align-items: stretch; }
-
-#team-gallery .team-card {
-  perspective: 1400px;
-  cursor: pointer;
+#team-gallery {
+  align-items: stretch;
+  perspective: 1600px;
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
+}
+
+#team-gallery .team-card {
+  cursor: pointer;
+  height: 480px;
+  z-index: 1;
+  transition: z-index 0s step-end 520ms;
   isolation: isolate;
   touch-action: pan-x;           /* prevent vertical pan on cards */
 }
@@ -165,6 +174,9 @@
   transform-origin: center;
   transition: transform 520ms ease, filter 320ms ease;
   width: 100%;
+  height: 480px;
+  will-change: transform;
+  transform: translateZ(0) rotateY(0deg);
 }
 
 #team-gallery .team-card__face {
@@ -173,8 +185,9 @@
   display: grid;
   gap: 16px;
   padding: 16px;                /* use spacing but no extra boundary */
-  background: transparent;      /* remove inner layer */
+  background: none;             /* remove inner layer */
   border: 0;                    /* single boundary only (outer card) */
+  border-radius: inherit;
   box-shadow: none;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -193,10 +206,11 @@
   opacity: 0;
   align-content: start;
   visibility: hidden;
+  padding: clamp(20px, 3vw, 28px);
 }
 
 #team-gallery .team-card.is-active .team-card__inner {
-  transform: rotateY(180deg);
+  transform: translateZ(0) rotateY(180deg);
 }
 
 #team-gallery .team-card.is-active .team-card__face--front {
@@ -208,6 +222,10 @@
 #team-gallery .team-card.is-active .team-card__face--back {
   opacity: 1;
   visibility: visible;
+}
+
+#team-gallery .team-card.is-active {
+  z-index: 10;
 }
 
 /* Back content */
@@ -227,9 +245,9 @@
 }
 
 /* Fit back content within card without vertical page scroll */
-#team-gallery .team-card__back-body { 
-  max-height: calc(100% - 16px);
-  overflow: auto;
+#team-gallery .team-card__back-body {
+  max-height: calc(100% - 32px);
+  overflow-y: auto;
 }
 #team-gallery .team-card__back-body::-webkit-scrollbar { width: 6px; }
 #team-gallery .team-card__back-body::-webkit-scrollbar-thumb { background: rgba(0,219,224,.45); border-radius: 999px; }
@@ -259,7 +277,7 @@
   content: "";
   position: absolute;
   inset: -24%;
-  filter: blur(34px);
+  filter: blur(28px);
   opacity: 0;
   pointer-events: none;
   background:
@@ -270,7 +288,7 @@
 
 #team-gallery .team-card:hover::before,
 #team-gallery .team-card.is-active::before {
-  opacity: 0.9;
+  opacity: 0.65;
 }
 
 /* Accessibility */
