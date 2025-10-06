@@ -1,7 +1,8 @@
 export default {
   name: "Amora Vida",
-  tagline: "Inspired by nature, built for life",
-  taglineLines: ["Inspired by nature,", "Built for life"],
+  brandSlogan: "Inspired by nature, built for life",
+  tagline: "Waterfront asset, institutional readiness",
+  taglineLines: ["Waterfront asset.", "Institutional readiness."],
   primaryCTA: {
     label: "Request Investor Briefing",
     url: "/contact/"

@@ -1,33 +1,42 @@
 ---
 layout: layouts/base.njk
+styles:
+  - index.css
 title: Local Roots. Global Vision.
 hero:
-  heading: "Inspired by nature, built for life"
-  subheading: "Quinta do Paço do Infante in Amora, Seixal offers 25,000 m² of developable area, full planning documentation, and a heritage landmark poised for modern living on Lisbon’s south bank."
+  heading: "Waterfront asset. Institutional readiness."
+  mission: "We steward waterfront redevelopment with institutional-grade planning, aligning heritage preservation with investor execution."
   ctas:
     primary:
-      label: "Explore Quinta do Paço do Infante"
+      label: "Explore the Land Opportunity"
       url: "/land-opportunity/"
     secondary:
-      label: "Download Investment Pack"
-      url: "/#request-briefing"
-metrics:
-  - value: "25,000 m²"
-    label: "Buildable GCA across residential, serviced living, and tourism"
-  - value: "120+"
-    label: "Potential premium units integrating the historic Palácio do Infante"
-  - value: "18 minutes"
-    label: "To Lisbon CBD via Ponte 25 de Abril"
-pillars:
-  - title: "Waterfront Legacy"
-    copy: "Panoramic Tagus views and the restored Palácio do Infante anchor a premium community that blends tradition with contemporary architecture."
-    url: "/land-opportunity/#heritage"
-  - title: "Turnkey Potential"
-    copy: "Masterplan, concept design, engineering studies, and sustainability framework delivered—accelerating development timelines."
-    url: "/land-opportunity/#documentation"
-  - title: "Global Expertise"
-    copy: "Portuguese leadership backed by Chinese investors with over 1,000,000 m² delivered across Asia and three decades in Portugal."
-    url: "/about/#leadership"
+      label: "Meet Amora Vida"
+      url: "/about/"
+capabilities:
+  heading: "Real estate development rooted in Portuguese stewardship"
+  copy:
+    - "Amora Vida structures heritage-led land and mixed-use projects across Lisbon’s south bank, pairing municipal partnerships with cross-border capital."
+    - "We provide acquisition strategy, planning leadership, and investor reporting so projects move from vision to delivery with discipline."
+  cta:
+    label: "About Us"
+    url: "/about/"
+land:
+  heading: "Quinta do Paço do Infante"
+  preheading: "Current Opportunity"
+  description: "190,000 m² waterfront estate with ready documentation for residential, hospitality, and serviced living."
+  highlights:
+    - "25,000 m² documented GCA spanning premium homes, hospitality, and community amenities."
+    - "Loteamento dossier under review; engineering, environmental, and ESG packs complete."
+    - "Seixal captures 14% of Greater Lisbon’s population growth with transport upgrades in motion."
+    - "Recent waterfront transactions benchmark €3,900–€4,600 €/m², underscoring investor appetite."
+  ctas:
+    primary:
+      label: "View Land Details"
+      url: "/land-opportunity/"
+    secondary:
+      label: "Request Investor Briefing"
+      url: "/contact/"
 ---
 <section class="hero">
   <div class="container hero__body">
@@ -39,7 +48,10 @@ pillars:
         <span class="hero__tagline-line hero__tagline-line--accent">{{ taglineParts[1] }}</span>
         {% endif %}
       </h1>
-      <p>{{ hero.subheading }}</p>
+      {% if site.brandSlogan %}
+      <p class="hero__slogan">{{ site.brandSlogan }}</p>
+      {% endif %}
+      <p>{{ hero.mission }}</p>
       <div class="hero__chips">
         <span class="hero__chip">190,000 m² waterfront estate</span>
         <span class="hero__chip">Seixal · Lisbon South Bank</span>
@@ -49,83 +61,46 @@ pillars:
         <a class="btn btn-secondary" href="{{ hero.ctas.secondary.url }}">{{ hero.ctas.secondary.label }}</a>
       </div>
     </div>
+    <figure class="hero__media">
+      <img src="/assets/images/LandScapeOverview1.jpg" alt="Aerial view of Quinta do Paço do Infante estate" loading="lazy" width="1280" height="720">
+    </figure>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="display:grid;gap:24px;max-width:var(--container-tight);">
+    <div class="section-heading">What We Do</div>
+    <h2 class="section-title">{{ capabilities.heading }}</h2>
+    <div class="prose">
+      {% for paragraph in capabilities.copy %}
+      <p>{{ paragraph }}</p>
+      {% endfor %}
+    </div>
+    <div>
+      <a class="btn btn-secondary" href="{{ capabilities.cta.url }}">{{ capabilities.cta.label }}</a>
+    </div>
   </div>
 </section>
 
 <section class="section section--surface">
-  <div class="container">
-    <div class="metrics-grid">
-      {% for metric in metrics %}
-      <div class="metric-card">
-        <h3>{{ metric.value }}</h3>
-        <p>{{ metric.label }}</p>
-      </div>
-      {% endfor %}
+  <div class="container" style="display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:start;">
+    <div style="display:grid;gap:16px;">
+      <div class="section-heading">{{ land.preheading }}</div>
+      <h2 class="section-title">{{ land.heading }}</h2>
+      <p>{{ land.description }}</p>
     </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-heading">Value Pillars</div>
-    <h2 class="section-title">Why Quinta do Paço do Infante Resonates with Investors</h2>
-    <div class="pillars-grid">
-      {% for pillar in pillars %}
-      <article class="pillar-card">
-        <h3>{{ pillar.title }}</h3>
-        <p>{{ pillar.copy }}</p>
-        <a href="{{ pillar.url }}" class="btn" style="margin-top:16px;padding:12px 18px;border:1px solid var(--color-accent);color:var(--color-accent-strong);">Learn more</a>
-      </article>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--surface-alt">
-  <div class="container" style="display:grid;gap:32px;">
-    <div>
-      <div class="section-heading">Asset Spotlight</div>
-      <h2 class="section-title">A Waterfront Estate Ready for Responsible Redevelopment</h2>
-      <p>Quinta do Paço do Infante combines heritage restoration, new residential terraces, and a boutique tourism component positioned in one of the last major waterfront zones near Lisbon. Utilities border the site and municipal collaboration is underway.</p>
-      <ul>
-        <li>120–140 premium residences plus 5,000 m² hospitality program.</li>
-        <li>Loteamento submission scheduled for Q3 2024 with technical dossiers prepared by Portuguese experts.</li>
-        <li>Adaptive reuse of the Palácio do Infante reinforces the project’s historic identity.</li>
-      </ul>
-      <a class="btn btn-primary" href="/land-opportunity/">View Land Details</a>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container" style="display:grid;gap:24px;">
-    <div>
-      <div class="section-heading">Market Snapshot</div>
-      <h2 class="section-title">Lisbon South Bank Momentum</h2>
-      <p>Seixal ranks among Greater Lisbon’s fastest-growing municipalities, with 12% price appreciation year-on-year and major transport upgrades slated through 2026. Demand for premium waterfront living outpaces current supply.</p>
-      <a class="btn" href="/market-context/" style="padding:12px 20px;border:1px solid var(--color-accent);color:var(--color-accent-strong);">See Market Analysis</a>
-    </div>
-    <div class="card">
-      <strong style="color:#fff;letter-spacing:0.08em;text-transform:uppercase;">Quick Data Points</strong>
+    <article class="card">
+      <strong style="color:#fff;letter-spacing:0.08em;text-transform:uppercase;">Opportunity Highlights</strong>
       <ul style="margin-top:16px;">
-        <li>14% of Greater Lisbon population growth captured by Seixal in the past decade.</li>
-        <li>A33 corridor expansion and Barreiro-Seixal ferry upgrade improve commute reliability.</li>
-        <li>Comparable waterfront developments: €3,900–€4,600 €/m² price band.</li>
+        {% for highlight in land.highlights %}
+        <li>{{ highlight }}</li>
+        {% endfor %}
       </ul>
-    </div>
+    </article>
   </div>
-</section>
-
-<section class="section section--surface-alt section--tight-bottom">
-  <div class="container" style="display:grid;gap:24px;">
-    <div class="section-heading">Credibility</div>
-    <h2 class="section-title">Recognized for Visionary Yet Grounded Development</h2>
-    <p>“Amora Vida is setting a benchmark for sustainable waterfront redevelopment on Lisbon’s south bank.” — <em>Mais Magazine</em>, 2024 feature on women’s leadership in real estate.</p>
-    <div style="display:flex;gap:28px;flex-wrap:wrap;align-items:center;opacity:0.85;color:var(--color-text-muted);">
-      <span>Featured in: Mais Magazine</span>
-      <span>Expresso</span>
-      <span>Trusted by cross-border investors</span>
-    </div>
+  <div class="container" style="margin-top:24px;display:flex;gap:16px;flex-wrap:wrap;">
+    <a class="btn btn-primary" href="{{ land.ctas.primary.url }}">{{ land.ctas.primary.label }}</a>
+    <a class="btn btn-secondary" href="{{ land.ctas.secondary.url }}">{{ land.ctas.secondary.label }}</a>
   </div>
 </section>
 
@@ -134,7 +109,7 @@ pillars:
     <div>
       <div class="section-heading">Lead Capture</div>
       <h2 class="section-title">Request a Confidential Briefing</h2>
-      <p>Share your details to access the investment pack and speak directly with our leadership within one business day.</p>
+      <p>Share your details to unlock the pack and a leadership follow-up within one business day.</p>
     </div>
     {% include "partials/lead-form.njk" %}
   </div>

@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if title %}{{ title }} · {% endif %}Amora Vida</title>
   <meta name="description" content="Turnkey waterfront development opportunity at Quinta do Paço do Infante, Amora, Seixal – presented by Amora Vida.">
-  <link rel="stylesheet" href="/assets/css/styles.css">
+  {% set pageStyles = styles or [] %}
+  <link rel="stylesheet" href="/assets/css/global.css">
+  {% for sheet in pageStyles %}
+  <link rel="stylesheet" href="/assets/css/{{ sheet }}">
+  {% endfor %}
 </head>
 <body>
   {% include "partials/site-header.njk" %}

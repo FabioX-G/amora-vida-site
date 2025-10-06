@@ -1,5 +1,7 @@
 ---
 layout: layouts/base.njk
+styles:
+  - about.css
 title: About Amora Vida
 description: "Amora Vida unites Portuguese roots with international capital to deliver heritage-respectful developments like Quinta do Paço do Infante."
 ---
@@ -7,311 +9,151 @@ description: "Amora Vida unites Portuguese roots with international capital to d
   <div class="container" style="display:grid;gap:24px;">
     <div class="section-heading">About Us</div>
     <h1 class="section-title">Visionary Development Grounded in Portuguese Heritage</h1>
-    <p>Amora Vida is a visionary development group with Portuguese roots and international investor backing, focused on transforming strategic land into resilient communities. We activate heritage-rich sites and growth corridors across Greater Lisbon, partnering with municipalities to deliver projects that respect local character and global standards.</p>
-    <p>Founded by partners based in Seixal and Macau, we combine on-the-ground relationships with international capital networks to move quickly and transparently. Our CEO, development director, architects, data analysts, and market researchers collaborate end-to-end—from acquisition through delivery—with two decades of Lisbon-area project experience.</p>
+    <p>Amora Vida is a Portuguese-led development platform backed by international capital. We reposition heritage assets and fast-growing corridors across Greater Lisbon in partnership with municipal stakeholders.</p>
+    <p>Founded by partners in Seixal and Macau, the team blends capital strategy, planning, design, and analytics with two decades of Lisbon-area delivery.</p>
   </div>
 </section>
+
+{% set teamMembers = [
+  {
+    id: 'fabio',
+    name: 'Fábio Xie',
+    role: 'Founder',
+    email: 'fabio.xie@amora-vida.com',
+    image: {
+      src: '/assets/images/team/FabioXieProfile.png',
+      alt: 'Fábio Xie — Founder',
+      width: 560,
+      height: 700
+    },
+    tagline: 'Capital orchestration &amp; cross-border partnerships',
+    bullets: [
+      'Investor relations &amp; equity placement.',
+      'Structured €100M+ cross-border capital.',
+      'Networks with developers delivering 1,000,000 m².'
+    ]
+  },
+  {
+    id: 'margarida',
+    name: 'Margarida d’Orey Cabral',
+    role: 'Director of Development &amp; Planning',
+    email: 'margarida.cabral@amora-vida.com',
+    image: {
+      src: '/assets/images/team/MargaridaProfile.png',
+      alt: 'Margarida d’Orey Cabral — Director of Development &amp; Planning',
+      width: 560,
+      height: 700
+    },
+    tagline: 'Planning stewardship &amp; heritage delivery',
+    bullets: [
+      'Leads loteamento submissions with municipalities.',
+      'Aligns engineering partners to heritage targets.',
+      'Stages phasing that protects the palace identity.'
+    ]
+  },
+  {
+    id: 'ana',
+    name: 'Ana Karina Peixoto',
+    role: 'Architect',
+    email: 'karina.peixoto@amora-vida.com',
+    image: {
+      src: '/assets/images/team/KarinaProfile.png',
+      alt: 'Ana Karina Peixoto — Architect',
+      width: 560,
+      height: 700
+    },
+    tagline: 'Adaptive design &amp; waterfront placemaking',
+    bullets: [
+      'Integrates hospitality, residential, and heritage uses.',
+      'Curates the design language for palace restoration.',
+      'Aligns sustainability frameworks with investor goals.'
+    ]
+  },
+  {
+    id: 'ricardo',
+    name: 'Ricardo Gaudêncio',
+    role: 'Data Analyst',
+    email: 'ricardo.gaudencio@amora-vida.com',
+    image: {
+      src: '/assets/images/team/RicardoProfile.png',
+      alt: 'Ricardo Gaudêncio — Data Analyst',
+      width: 560,
+      height: 700
+    },
+    tagline: 'Financial analytics &amp; modelling',
+    bullets: [
+      'Builds capital-stack and sensitivity models.',
+      'Automates dashboards for diligence rooms.',
+      'Maps phased absorption and revenue curves.'
+    ]
+  },
+  {
+    id: 'carolina',
+    name: 'Carolina Amaral',
+    role: 'Market Researcher',
+    email: 'carolina.amaral@amora-vida.com',
+    image: {
+      src: '/assets/images/team/CarolinaProfile.png',
+      alt: 'Carolina Amaral — Market Researcher',
+      width: 560,
+      height: 700
+    },
+    tagline: 'Market intelligence &amp; storytelling',
+    bullets: [
+      'Quantifies demand &amp; pricing momentum.',
+      'Produces investor briefs for committees.',
+      'Benchmarks comparables for positioning.'
+    ]
+  }
+] %}
 
 <section id="leadership" class="section">
   <div class="container">
     <div class="section-heading">Leadership</div>
     <h2 class="section-title">Multidisciplinary Team</h2>
-    <p class="team-intro">A focused team joining capital strategy, planning, design, market analytics, and data-backed underwriting. Tap a profile to open the dossier; the gallery dims to spotlight each leader.</p>
-    <div class="team-gallery" data-team-gallery>
-      <article class="team-card" data-team-card>
-        <button
-          class="team-card__toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="team-detail-margarida-cabral"
-          aria-labelledby="team-card-margarida-cabral-name team-card-margarida-cabral-role"
-        ></button>
-        <div class="team-card__summary">
-          <figure class="team-card__portrait">
-            <img class="headshot" src="/assets/images/team/MargaridaProfile.png" alt="Margarida d’Orey Cabral — Director of Development &amp; Planning" loading="lazy" width="560" height="700">
-          </figure>
-          <div class="team-card__meta">
-            <h3 class="team-card__name" id="team-card-margarida-cabral-name">Margarida d’Orey Cabral</h3>
-            <p class="team-card__role" id="team-card-margarida-cabral-role">Director of Development &amp; Planning</p>
-            <a class="team-card__email" href="mailto:margarida.cabral@amora-vida.com">margarida.cabral@amora-vida.com</a>
-          </div>
-        </div>
-        <div class="team-card__detail" id="team-detail-margarida-cabral" hidden>
-          <div class="team-card__detail-inner">
-            <p class="team-card__tagline">Planning approvals and heritage-sensitive masterplans</p>
-            <p>Guides loteamento strategy, municipal engagement, and technical coordination to align heritage restoration with contemporary density goals across the Arco Ribeirinho Sul.</p>
-            <ul class="team-card__bullets">
-              <li>Leads entitlement and municipal liaison for waterfront projects.</li>
-              <li>Former advisor on Lisbon urban regeneration initiatives.</li>
-              <li>Ensures design coordination across engineering partners.</li>
-            </ul>
-            <div class="team-card__contact">
-              <a href="mailto:margarida.cabral@amora-vida.com">margarida.cabral@amora-vida.com</a>
-              <a href="tel:+351963929934">(+351) 963-929-934</a>
+    <ul id="team-gallery" class="team-gallery" aria-label="Leadership">
+      {% for member in teamMembers %}
+      <li class="team-card" data-member="{{ member.id }}">
+        <div class="team-card__inner" role="group" aria-labelledby="name-{{ member.id }}">
+          <div class="team-card__face team-card__face--front">
+            <figure class="team-card__frame" aria-hidden="true">
+              <div class="team-card__portrait">
+                <img src="{{ member.image.src }}"
+                     alt="{{ member.image.alt }}" loading="lazy" width="{{ member.image.width }}" height="{{ member.image.height }}">
+              </div>
+            </figure>
+            <div class="team-card__meta">
+              <h3 id="name-{{ member.id }}" class="team-card__name">{{ member.name }}</h3>
+              <p class="team-card__role" id="role-{{ member.id }}">{{ member.role }}</p>
+              <p class="team-card__email"><a href="mailto:{{ member.email }}">{{ member.email }}</a></p>
             </div>
-            <button class="team-card__close" type="button" data-team-card-close>Close</button>
           </div>
-        </div>
-      </article>
-
-      <article class="team-card" data-team-card>
-        <button
-          class="team-card__toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="team-detail-ana-karina-peixoto"
-          aria-labelledby="team-card-ana-karina-peixoto-name team-card-ana-karina-peixoto-role"
-        ></button>
-        <div class="team-card__summary">
-          <figure class="team-card__portrait">
-            <img class="headshot" src="/assets/images/team/KarinaProfile.png" alt="Ana Karina Peixoto — Architect" loading="lazy" width="560" height="700">
-          </figure>
-          <div class="team-card__meta">
-            <h3 class="team-card__name" id="team-card-ana-karina-peixoto-name">Ana Karina Peixoto</h3>
-            <p class="team-card__role" id="team-card-ana-karina-peixoto-role">Architect</p>
-            <a class="team-card__email" href="mailto:karina.peixoto@amora-vida.com">karina.peixoto@amora-vida.com</a>
-          </div>
-        </div>
-        <div class="team-card__detail" id="team-detail-ana-karina-peixoto" hidden>
-          <div class="team-card__detail-inner">
-            <p class="team-card__tagline">Adaptive reuse and waterfront placemaking</p>
-            <p>Shapes the architectural vision for Quinta do Paço do Infante, balancing palace restoration with new residential typologies and hospitality concepts tuned to waterfront demand.</p>
+          <div class="team-card__face team-card__face--back" aria-label="Role description" aria-describedby="role-{{ member.id }}">
+            <p class="team-card__role team-card__role--back" aria-hidden="true">{{ member.role }}</p>
+            <p class="team-card__tagline">{{ member.tagline | safe }}</p>
             <ul class="team-card__bullets">
-              <li>Designs boutique hospitality and residential schemes across Lisbon.</li>
-              <li>Integrates sustainability frameworks with heritage assets.</li>
-              <li>Coordinates visualization and design guidelines for investors.</li>
+              {% for bullet in member.bullets %}
+              <li>{{ bullet | safe }}</li>
+              {% endfor %}
             </ul>
-            <div class="team-card__contact">
-              <a href="mailto:karina.peixoto@amora-vida.com">karina.peixoto@amora-vida.com</a>
-              <a href="tel:+351961897421">(+351) 961-897-421</a>
-            </div>
-            <button class="team-card__close" type="button" data-team-card-close>Close</button>
           </div>
         </div>
-      </article>
-
-      <article class="team-card" data-team-card>
-        <button
-          class="team-card__toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="team-detail-ricardo-gaudencio"
-          aria-labelledby="team-card-ricardo-gaudencio-name team-card-ricardo-gaudencio-role"
-        ></button>
-        <div class="team-card__summary">
-          <figure class="team-card__portrait">
-            <img class="headshot" src="/assets/images/team/RicardoProfile.png" alt="Ricardo Gaudêncio — Data Analyst" loading="lazy" width="560" height="700">
-          </figure>
-          <div class="team-card__meta">
-            <h3 class="team-card__name" id="team-card-ricardo-gaudencio-name">Ricardo Gaudêncio</h3>
-            <p class="team-card__role" id="team-card-ricardo-gaudencio-role">Data Analyst</p>
-            <a class="team-card__email" href="mailto:ricardo.gaudencio@amora-vida.com">ricardo.gaudencio@amora-vida.com</a>
-          </div>
-        </div>
-        <div class="team-card__detail" id="team-detail-ricardo-gaudencio" hidden>
-          <div class="team-card__detail-inner">
-            <p class="team-card__tagline">Financial modeling and sensitivity testing</p>
-            <p>Delivers financial models, sensitivity runs, and investor dashboards that translate planning milestones into capital stack requirements and projected returns.</p>
-            <ul class="team-card__bullets">
-              <li>Builds scenario models for land, loteamento, and vertical development.</li>
-              <li>Automates dashboards for investor diligence rooms.</li>
-              <li>Supports structuring of phased absorption and revenue curves.</li>
-            </ul>
-            <div class="team-card__contact">
-              <a href="mailto:ricardo.gaudencio@amora-vida.com">ricardo.gaudencio@amora-vida.com</a>
-              <a href="tel:+351915476271">(+351) 915-476-271</a>
-            </div>
-            <button class="team-card__close" type="button" data-team-card-close>Close</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="team-card" data-team-card>
-        <button
-          class="team-card__toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="team-detail-carolina-amaral"
-          aria-labelledby="team-card-carolina-amaral-name team-card-carolina-amaral-role"
-        ></button>
-        <div class="team-card__summary">
-          <figure class="team-card__portrait">
-            <img class="headshot" src="/assets/images/team/CarolinaProfile.png" alt="Carolina Amaral — Market Researcher" loading="lazy" width="560" height="700">
-          </figure>
-          <div class="team-card__meta">
-            <h3 class="team-card__name" id="team-card-carolina-amaral-name">Carolina Amaral</h3>
-            <p class="team-card__role" id="team-card-carolina-amaral-role">Market Researcher</p>
-            <a class="team-card__email" href="mailto:carolina.amaral@amora-vida.com">carolina.amaral@amora-vida.com</a>
-          </div>
-        </div>
-        <div class="team-card__detail" id="team-detail-carolina-amaral" hidden>
-          <div class="team-card__detail-inner">
-            <p class="team-card__tagline">Demand analytics and investor-grade storytelling</p>
-            <p>Builds market evidence for investor committees by quantifying absorption, pricing velocity, and product fit across Lisbon South Bank residential and mixed-use launches.</p>
-            <ul class="team-card__bullets">
-              <li>Shapes absorption models for Lisbon South Bank launches.</li>
-              <li>Delivers investor briefings on demographic and pricing trends.</li>
-              <li>Benchmarks comparables for strategic positioning.</li>
-            </ul>
-            <div class="team-card__contact">
-              <a href="mailto:carolina.amaral@amora-vida.com">carolina.amaral@amora-vida.com</a>
-              <a href="tel:+351932134443">(+351) 932-134-443</a>
-            </div>
-            <button class="team-card__close" type="button" data-team-card-close>Close</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="team-card" data-team-card>
-        <button
-          class="team-card__toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="team-detail-fabio-xie"
-          aria-labelledby="team-card-fabio-xie-name team-card-fabio-xie-role"
-        ></button>
-        <div class="team-card__summary">
-          <figure class="team-card__portrait">
-            <img class="headshot" src="/assets/images/team/FabioXieProfile.png" alt="Fábio Xie — Co-Founder &amp; Chief Executive Officer" loading="lazy" width="560" height="700">
-          </figure>
-          <div class="team-card__meta">
-            <h3 class="team-card__name" id="team-card-fabio-xie-name">Fábio Xie</h3>
-            <p class="team-card__role" id="team-card-fabio-xie-role">Founder</p>
-            <a class="team-card__email" href="mailto:fabio.xie@amora-vida.com">fabio.xie@amora-vida.com</a>
-          </div>
-        </div>
-        <div class="team-card__detail" id="team-detail-fabio-xie" hidden>
-          <div class="team-card__detail-inner">
-            <p class="team-card__tagline">Capital orchestration and cross-border partnerships</p>
-            <p>Leads investor relations, equity placement, and strategic alliances linking Portuguese projects with Asian capital partners. Coordinates the full financing stack for Quinta do Paço do Infante and future acquisitions.</p>
-            <ul class="team-card__bullets">
-              <li>30+ years of family entrepreneurship in Portugal.</li>
-              <li>Structured €100M+ in cross-border real estate capital.</li>
-              <li>Direct line to Asian developers delivering 1,000,000 m².</li>
-            </ul>
-            <div class="team-card__contact">
-              <a href="mailto:fabio.xie@amora-vida.com">fabio.xie@amora-vida.com</a>
-              <a href="tel:+351926601579">(+351) 926-601-579</a>
-            </div>
-            <button class="team-card__close" type="button" data-team-card-close>Close</button>
-          </div>
-        </div>
-      </article>
-    </div>
+      </li>
+      {% endfor %}
+    </ul>
   </div>
 </section>
 
-<script type="module">
-  const gallery = document.querySelector('[data-team-gallery]');
-  if (gallery) {
-    const cards = Array.from(gallery.querySelectorAll('[data-team-card]'));
-    let activeCard = null;
-
-    const getToggle = card => card.querySelector('.team-card__toggle');
-    const getDetail = card => card.querySelector('.team-card__detail');
-
-    const setExpandedState = (card, expanded) => {
-      const toggle = getToggle(card);
-      const detail = getDetail(card);
-      toggle?.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-      if (detail) {
-        if (expanded) {
-          detail.removeAttribute('hidden');
-        } else {
-          detail.setAttribute('hidden', '');
-        }
-      }
-    };
-
-    const updateGalleryDim = () => {
-      gallery.classList.toggle('team-gallery--dim', Boolean(activeCard));
-    };
-
-    const collapseActive = (options = {}) => {
-      if (!activeCard) return;
-      const card = activeCard;
-      setExpandedState(card, false);
-      card.classList.remove('is-active');
-      activeCard = null;
-      updateGalleryDim();
-      if (options.focusToggle) {
-        getToggle(card)?.focus({ preventScroll: true });
-      }
-    };
-
-    const showCard = card => {
-      if (!card || activeCard === card) return;
-      collapseActive();
-      setExpandedState(card, true);
-      card.classList.add('is-active');
-      activeCard = card;
-      updateGalleryDim();
-      getToggle(card)?.focus({ preventScroll: true });
-      requestAnimationFrame(() => {
-        card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-      });
-    };
-
-    const toggleCard = card => {
-      if (activeCard === card) {
-        collapseActive();
-      } else {
-        showCard(card);
-      }
-    };
-
-    cards.forEach(card => {
-      const toggle = getToggle(card);
-      const closeBtn = card.querySelector('[data-team-card-close]');
-
-      toggle?.addEventListener('click', event => {
-        event.preventDefault();
-        toggleCard(card);
-      });
-
-      card.addEventListener('click', event => {
-        const closeTarget = event.target.closest('[data-team-card-close]');
-        if (closeTarget) {
-          event.preventDefault();
-          event.stopPropagation();
-          collapseActive({ focusToggle: true });
-          return;
-        }
-
-        if (event.target.closest('a')) {
-          return;
-        }
-
-        toggleCard(card);
-      });
-
-      closeBtn?.addEventListener('click', event => {
-        event.preventDefault();
-        event.stopPropagation();
-        if (activeCard === card) {
-          collapseActive({ focusToggle: true });
-        } else {
-          getToggle(card)?.focus({ preventScroll: true });
-        }
-      });
-    });
-
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && activeCard) {
-        collapseActive({ focusToggle: true });
-      }
-    });
-  }
-</script>
+<script src="/assets/js/team-cards.js" defer></script>
 
 <section id="investors" class="section section--surface-alt">
   <div class="container" style="display:grid;gap:24px;">
     <div class="section-heading">Our Investors</div>
     <h2 class="section-title">Local Roots, Global Strength</h2>
-    <p>Amora Vida and Surpora Lda. are backed by overseas Chinese entrepreneurs who have called Portugal home for nearly three decades. As naturalized Portuguese citizens, they are deeply committed to the communities they invest in and to the long-term prosperity of the Lisbon South Bank.</p>
-    <p>They partner with seasoned Chinese developers responsible for more than 1,000,000 m² of integrated residential and commercial projects across China and Thailand, bringing institutional discipline, capital depth, and operational know-how.</p>
-    <p>Complementing this cross-border expertise is a network of long-established Portuguese entrepreneurs spanning gastronomy, real estate, fashion, food supply, and stone industries. Their local relationships, supply-chain insight, and craftsmanship keep every project grounded in the region’s economy.</p>
-    <p>This alliance of rooted Portuguese leadership, global development capability, and diversified financial strength underpins the responsible execution and sustainable success of Quinta do Paço do Infante.</p>
+    <p>Amora Vida and Surpora Lda. are backed by overseas Chinese entrepreneurs who have lived in Portugal for nearly three decades. As naturalised citizens, they reinvest in the communities where they operate.</p>
+    <p>The platform collaborates with Chinese developers that have delivered more than 1,000,000 m² of integrated projects across Asia, contributing institutional discipline and capital depth.</p>
+    <p>Local partnerships span Portuguese entrepreneurs in gastronomy, real estate, fashion, food supply, and stone industries, providing supply-chain reach and craftsmanship rooted in the region.</p>
+    <p>This blend of local leadership, global development capability, and diversified capital underpins the execution of Quinta do Paço do Infante.</p>
   </div>
 </section>
 

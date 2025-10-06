@@ -9,9 +9,9 @@
       </span>
     </a>
     <nav class="top-nav__links" aria-label="Primary">
+      <a class="top-nav__link" href="/land-opportunity/"{% if page.url == '/land-opportunity/' %} aria-current="page"{% endif %}>Land</a>
+      <a class="top-nav__link" href="/market-context/"{% if page.url == '/market-context/' %} aria-current="page"{% endif %}>Market</a>
       <a class="top-nav__link" href="/about/"{% if page.url == '/about/' %} aria-current="page"{% endif %}>About Us</a>
-      <a class="top-nav__link" href="/land-opportunity/"{% if page.url == '/land-opportunity/' %} aria-current="page"{% endif %}>Land Opportunity</a>
-      <a class="top-nav__link" href="/market-context/"{% if page.url == '/market-context/' %} aria-current="page"{% endif %}>Market Context</a>
       <a class="top-nav__link" href="/contact/"{% if page.url == '/contact/' %} aria-current="page"{% endif %}>Contact</a>
     </nav>
   </div>
