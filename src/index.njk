@@ -8,16 +8,17 @@ hero:
   mission: "We steward waterfront redevelopment with institutional-grade planning, aligning heritage preservation with investor execution."
   ctas:
     primary:
-      label: "Explore the Land Opportunity"
-      url: "/land-opportunity/"
-    secondary:
       label: "Meet Amora Vida"
       url: "/about/"
+    secondary:
+      label: "Explore the Land Opportunity"
+      url: "/land-opportunity/"
 capabilities:
   heading: "Real estate development rooted in Portuguese stewardship"
   copy:
     - "Amora Vida structures heritage-led land and mixed-use projects across Lisbon’s south bank, pairing municipal partnerships with cross-border capital."
     - "We provide acquisition strategy, planning leadership, and investor reporting so projects move from vision to delivery with discipline."
+    - "Our leadership team blends Portuguese stewardship with institutional partners to deliver resilient waterfront destinations."
   cta:
     label: "About Us"
     url: "/about/"
@@ -26,10 +27,9 @@ land:
   preheading: "Current Opportunity"
   description: "190,000 m² waterfront estate with ready documentation for residential, hospitality, and serviced living."
   highlights:
-    - "25,000 m² documented GCA spanning premium homes, hospitality, and community amenities."
-    - "Loteamento dossier under review; engineering, environmental, and ESG packs complete."
-    - "Seixal captures 14% of Greater Lisbon’s population growth with transport upgrades in motion."
-    - "Recent waterfront transactions benchmark €3,900–€4,600 €/m², underscoring investor appetite."
+    - "25,000 m² documented GCA across premium residential, hospitality, and community amenities."
+    - "Stabilized heritage palace anchors the program with cultural and hospitality potential."
+    - "Planning dossier, engineering, and ESG files ready for investor diligence."
   ctas:
     primary:
       label: "View Land Details"
@@ -89,9 +89,9 @@ land:
       <h2 class="section-title">{{ land.heading }}</h2>
       <p>{{ land.description }}</p>
     </div>
-    <article class="card">
-      <strong style="color:#fff;letter-spacing:0.08em;text-transform:uppercase;">Opportunity Highlights</strong>
-      <ul style="margin-top:16px;">
+    <article class="card" style="display:grid;gap:12px;">
+      <strong style="color:#fff;letter-spacing:0.08em;text-transform:uppercase;">Investment Snapshot</strong>
+      <ul style="margin:0;padding-left:1.1rem;display:grid;gap:8px;">
         {% for highlight in land.highlights %}
         <li>{{ highlight }}</li>
         {% endfor %}
