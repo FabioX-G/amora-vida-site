@@ -42,8 +42,8 @@
   position: relative;
   scroll-snap-align: center;
   scroll-snap-stop: always;
-  height: 480px;
-  min-height: 480px;
+  height: 520px;
+  min-height: 520px;
   border-radius: 20px;
   background: linear-gradient(160deg, rgba(18, 20, 40, 0.92), rgba(12, 14, 32, 0.84));
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -168,7 +168,6 @@
 
 #team-gallery .team-card {
   cursor: pointer;
-  height: 480px;
   z-index: 1;
   transition: z-index 0s step-end 520ms;
   isolation: isolate;
