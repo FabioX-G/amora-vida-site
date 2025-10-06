@@ -36,11 +36,11 @@ description: "Amora Vida unites Portuguese roots with international capital to d
   {
     id: 'margarida',
     name: 'Margarida d’Orey Cabral',
-    role: 'Director of Development &amp; Planning',
+    role: 'Director of Development & Planning',
     email: 'margarida.cabral@amora-vida.com',
     image: {
       src: '/assets/images/team/MargaridaProfile.png',
-      alt: 'Margarida d’Orey Cabral — Director of Development &amp; Planning',
+      alt: 'Margarida d’Orey Cabral — Director of Development & Planning',
       width: 560,
       height: 700
     },
@@ -124,12 +124,12 @@ description: "Amora Vida unites Portuguese roots with international capital to d
             </figure>
             <div class="team-card__meta">
               <h3 id="name-{{ member.id }}" class="team-card__name">{{ member.name }}</h3>
-              <p class="team-card__role" id="role-{{ member.id }}">{{ member.role }}</p>
+              <p class="team-card__role" id="role-{{ member.id }}">{{ member.role | safe }}</p>
               <p class="team-card__email"><a href="mailto:{{ member.email }}">{{ member.email }}</a></p>
             </div>
           </div>
           <div class="team-card__face team-card__face--back" aria-label="Role description" aria-describedby="role-{{ member.id }}">
-            <p class="team-card__role team-card__role--back" aria-hidden="true">{{ member.role }}</p>
+            <p class="team-card__role team-card__role--back" aria-hidden="true">{{ member.role | safe }}</p>
             <p class="team-card__tagline">{{ member.tagline | safe }}</p>
             <ul class="team-card__bullets">
               {% for bullet in member.bullets %}
