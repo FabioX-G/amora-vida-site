@@ -145,15 +145,6 @@
 }
 
 .team-member__bio {
-.about-hero__lede + p,
-#about-hero p + p {
-  color: rgba(227, 234, 255, 0.85);
-  font-size: 1.02rem;
-  line-height: 1.75;
-  max-width: 66ch;
-}
-
-.team-member__bio {
   margin: 0;
   font-size: 1.04rem;
   line-height: 1.74;
@@ -187,11 +178,18 @@
 @media (max-width: 960px) {
   .team-member {
     grid-template-columns: 1fr;
-    padding: clamp(20px, 6vw, 32px);
+    padding: clamp(20px, 7vw, 36px);
+    border-radius: 24px;
   }
 
   .team-member__media {
-    width: clamp(200px, 52vw, 320px);
+    width: min(100%, clamp(220px, 60vw, 340px));
+    max-width: 320px;
+  }
+
+  .team-member__content {
+    padding-inline-start: 0;
+    gap: clamp(16px, 5vw, 24px);
   }
 
   .team-member::after {
@@ -202,6 +200,21 @@
     height: 2px;
     background: linear-gradient(90deg, rgba(88, 255, 238, 0.86), rgba(147, 86, 255, 0.54));
   }
+
+  .team-member__name {
+    font-size: clamp(1.32rem, 6vw, 1.7rem);
+  }
+
+  .team-member__bio {
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 100%;
+  }
+
+  .team-member__email {
+    font-size: 0.95rem;
+    word-break: break-word;
+  }
 }
 
 @media (max-width: 640px) {
@@ -210,6 +223,29 @@
   }
 
   .team-member__bio {
-    font-size: 1rem;
+    font-size: 0.97rem;
+    line-height: 1.66;
+  }
+
+  .team-member {
+    padding: clamp(18px, 8vw, 30px);
+  }
+
+  .team-member__role {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+  }
+
+  .team-member__name {
+    font-size: clamp(1.22rem, 7vw, 1.45rem);
+  }
+
+  .team-member__media {
+    max-width: 280px;
+  }
+
+  #leadership .section-heading {
+    font-size: 0.92rem;
+    letter-spacing: 0.16em;
   }
 }
