@@ -81,24 +81,24 @@
 
 .land-overview__chips {
   display: grid;
-  gap: 10px;
+  gap: 12px;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   width: min(720px, 100%);
+  justify-items: center;
 }
 
 .land-overview__chips span {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 12px;
   padding: 12px 20px;
   border-radius: 18px;
-  border: 1px solid rgba(0, 219, 224, 0.38);
-  background: rgba(8, 16, 34, 0.68);
-  letter-spacing: 0.08em;
+  border: 1px solid rgba(0, 219, 224, 0.32);
+  background: rgba(8, 16, 34, 0.72);
+  letter-spacing: 0.06em;
   font-size: 0.84rem;
   color: rgba(228, 238, 255, 0.92);
-  box-shadow: 0 10px 24px -18px rgba(0, 219, 224, 0.65);
+  box-shadow: 0 16px 30px -24px rgba(0, 219, 224, 0.55);
 }
 
 .land-overview__chips span::before {
@@ -106,8 +106,17 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  display: inline-block;
   background: rgba(111, 241, 248, 0.9);
+  box-shadow: 0 0 10px rgba(111, 241, 248, 0.6);
+}
+
+.land-overview__chips--left {
+  justify-items: start;
+  text-align: left;
+}
+
+.land-overview__chips--left span {
+  justify-content: flex-start;
 }
 
 .land-overview__cta {
@@ -134,42 +143,6 @@
   align-items: start;
 }
 
-.land-spec__facts {
-  display: grid;
-  gap: clamp(16px, 3vw, 20px);
-  color: rgba(232, 240, 255, 0.92);
-}
-
-.land-spec__facts ul {
-  margin: 0;
-  padding-left: 1.1rem;
-  display: grid;
-  gap: 10px;
-  color: rgba(220, 232, 255, 0.88);
-  list-style: none;
-}
-
-.land-spec__facts li {
-  position: relative;
-  padding-left: 18px;
-}
-
-.land-spec__facts strong {
-  color: rgba(115, 242, 255, 0.92);
-}
-
-.land-spec__facts li::before {
-  content: '';
-  position: absolute;
-  inset-inline-start: 0;
-  top: 10px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(0, 219, 224, 0.8);
-  box-shadow: 0 0 12px rgba(0, 219, 224, 0.6);
-}
-
 .land-spec__media {
   margin: 0;
   display: grid;
@@ -194,6 +167,42 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: rgba(218, 234, 255, 0.7);
+}
+
+.land-spec__facts {
+  display: grid;
+  gap: clamp(12px, 3vw, 18px);
+  color: rgba(232, 240, 255, 0.92);
+}
+
+.land-spec__facts ul {
+  margin: 0;
+  padding-left: 0;
+  display: grid;
+  gap: 12px;
+  list-style: none;
+}
+
+.land-spec__facts li {
+  position: relative;
+  padding-left: 20px;
+  color: rgba(220, 232, 255, 0.88);
+}
+
+.land-spec__facts strong {
+  color: rgba(115, 242, 255, 0.92);
+}
+
+.land-spec__facts li::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0, 219, 224, 0.8);
+  box-shadow: 0 0 12px rgba(0, 219, 224, 0.6);
 }
 
 .land-plan {
@@ -366,15 +375,6 @@
   .land-hero {
     min-height: 420px;
     border-radius: 0 0 42px 42px;
-  }
-
-  .land-spec__badge {
-    font-size: 0.6rem;
-    letter-spacing: 0.22em;
-  }
-
-  .land-spec__title {
-    font-size: clamp(1.7rem, 6vw, 2.2rem);
   }
 
   .land-overview__chips span {

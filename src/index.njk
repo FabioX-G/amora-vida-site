@@ -2,115 +2,166 @@
 layout: layouts/base.njk
 styles:
   - index.css
-title: Local Roots. Global Vision.
+  - land.css
+title: Amora Vida · Investor Overview
+description: "Understand Amora Vida’s thesis at a glance, then navigate to the detailed Land, Market, About, or Contact pages."
 hero:
-  heading: "Waterfront asset. Institutional readiness."
-  mission: "We steward waterfront redevelopment with institutional-grade planning, aligning heritage preservation with investor execution."
-  ctas:
-    primary:
-      label: "Meet Amora Vida"
-      url: "/about/"
-    secondary:
-      label: "Explore the Land Opportunity"
-      url: "/land-opportunity/"
-capabilities:
-  heading: "Real estate development rooted in Portuguese stewardship"
-  copy:
-    - "Amora Vida structures heritage-led land and mixed-use projects across Lisbon’s south bank, pairing municipal partnerships with cross-border capital."
-    - "We provide acquisition strategy, planning leadership, and investor reporting so projects move from vision to delivery with discipline."
-    - "Our leadership team blends Portuguese stewardship with institutional partners to deliver resilient waterfront destinations."
+  title: "Amora Vida acquires, develops, and exits strategic land across Greater Lisbon."
+  mission: "We create long-term value through disciplined land acquisitions, entitlement strategy, and transparent investor partnerships."
+  media:
+    src: "/assets/images/LandScapeOverview1.jpg"
+    alt: "Panoramic view across Lisbon’s south bank waterfront"
   cta:
-    label: "About Us"
-    url: "/about/"
-land:
-  heading: "Quinta do Paço do Infante"
-  preheading: "Current Opportunity"
-  description: "190,000 m² waterfront estate with ready documentation for residential, hospitality, and serviced living."
-  highlights:
-    - "25,000 m² documented GCA across premium residential, hospitality, and community amenities."
-    - "Stabilized heritage palace anchors the program with cultural and hospitality potential."
-    - "Planning dossier, engineering, and ESG files ready for investor diligence."
+    label: "Explore Current Opportunity"
+    url: "/land-opportunity/"
+opportunity:
+  heading: "Current Opportunity — Amora, Seixal (19 ha Waterfront Estate)"
+  summary: "A scarce 19 ha waterfront estate positioned for Lisbon’s south-bank growth cycle."
+  metrics:
+    - "19 ha total land"
+    - "25,000 m² GCA (PIP)"
+    - "100–150 units potential"
+    - "16 min to Lisbon"
+  image:
+    src: "/assets/images/LandBoundary%20Overview.png"
+    alt: "Land boundary overview of Quinta do Paço do Infante"
+market:
+  heading: "Lisbon South Bank Momentum"
+  summary: "Infrastructure upgrades, population inflows, and lifestyle shifts are accelerating demand across the south bank."
+  visual:
+    src: "/assets/images/ParquesCidadesdoTejo.jpeg"
+    alt: "Regional growth map of Parque Cidades do Tejo"
+  cta:
+    label: "See Market Insights"
+    url: "/market-context/"
+approach:
+  heading: "Our Approach"
+  items:
+    - icon: "🔍"
+      title: "Acquire Intelligently"
+      text: "Target undervalued waterfront and regeneration assets with clear catalysts."
+    - icon: "🏗️"
+      title: "Develop Strategically"
+      text: "Secure entitlements and partnerships that de-risk growth before vertical delivery."
+    - icon: "💼"
+      title: "Exit Transparently"
+      text: "Define investor reporting and exit pathways from acquisition through sale."
+team:
+  heading: "Leadership at a Glance"
+  members:
+    - name: "Fábio Xie"
+      role: "Founder · Strategy & Capital"
+      image: "/assets/images/AV Site Team Photos/FabioXieProfile.png"
+      alt: "Portrait of Fábio Xie"
+    - name: "Margarida d’Orey Cabral"
+      role: "Director of Development & Planning"
+      image: "/assets/images/AV Site Team Photos/MargaridaProfile.png"
+      alt: "Portrait of Margarida d’Orey Cabral"
+    - name: "Ana Karina Peixoto"
+      role: "Architect · Design & Analysis"
+      image: "/assets/images/AV Site Team Photos/KarinaProfile.png"
+      alt: "Portrait of Ana Karina Peixoto"
+contact:
+  heading: "Interested in learning more?"
+  text: "Request the investment overview or connect with the leadership team to access the full technical dossiers."
   ctas:
     primary:
-      label: "View Land Details"
-      url: "/land-opportunity/"
-    secondary:
-      label: "Request Investor Briefing"
+      label: "Contact Investor Relations"
       url: "/contact/"
+    secondary:
+      label: "Email info@amora-vida.com"
+      url: "mailto:info@amora-vida.com"
 ---
-<section class="hero">
+<section class="hero hero--dashboard">
   <div class="container hero__body">
-    {% set taglineParts = site.taglineLines or [site.tagline] %}
     <div class="hero__intro">
-      <h1 class="hero__tagline">
-        <span class="hero__tagline-line">{{ taglineParts[0] }}</span>
-        {% if taglineParts | length > 1 %}
-        <span class="hero__tagline-line hero__tagline-line--accent">{{ taglineParts[1] }}</span>
-        {% endif %}
-      </h1>
-      {% if site.brandSlogan %}
-      <p class="hero__slogan">{{ site.brandSlogan }}</p>
-      {% endif %}
-      <p>{{ hero.mission }}</p>
-      <div class="hero__chips">
-        <span class="hero__chip">190,000 m² waterfront estate</span>
-        <span class="hero__chip">Seixal · Lisbon South Bank</span>
-      </div>
-      <div class="btn-group">
-        <a class="btn btn-primary" href="{{ hero.ctas.primary.url }}">{{ hero.ctas.primary.label }}</a>
-        <a class="btn btn-secondary" href="{{ hero.ctas.secondary.url }}">{{ hero.ctas.secondary.label }}</a>
-      </div>
+      <h1 class="hero__headline">{{ hero.title }}</h1>
+      <p class="hero__mission">{{ hero.mission }}</p>
+      <a class="btn btn-primary" href="{{ hero.cta.url }}">{{ hero.cta.label }}</a>
     </div>
     <figure class="hero__media">
-      <img src="/assets/images/LandScapeOverview1.jpg" alt="Aerial view of Quinta do Paço do Infante estate" loading="lazy" width="1280" height="720">
+      <img src="{{ hero.media.src }}" alt="{{ hero.media.alt }}" loading="lazy" width="1280" height="720">
     </figure>
   </div>
 </section>
 
-<section class="section">
-  <div class="container" style="display:grid;gap:24px;max-width:var(--container-tight);">
-    <div class="section-heading">What We Do</div>
-    <h2 class="section-title">{{ capabilities.heading }}</h2>
-    <div class="prose">
-      {% for paragraph in capabilities.copy %}
-      <p>{{ paragraph }}</p>
+<section id="home-opportunity" class="section section--surface home-opportunity">
+  <div class="container home-opportunity__body">
+    <figure class="home-opportunity__media">
+      <img src="{{ opportunity.image.src }}" alt="{{ opportunity.image.alt }}" loading="lazy" width="960" height="640">
+    </figure>
+    <div class="home-opportunity__content">
+      <h2 class="section-heading">{{ opportunity.heading }}</h2>
+      <p>{{ opportunity.summary }}</p>
+      <div class="land-overview__chips land-overview__chips--left" role="list">
+        {% for metric in opportunity.metrics %}
+        <span role="listitem">{{ metric }}</span>
+        {% endfor %}
+      </div>
+      <a class="btn btn-primary" href="/land-opportunity/">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<section id="home-market" class="section home-market">
+  <div class="container home-market__body">
+    <h2 class="section-heading">{{ market.heading }}</h2>
+    <div class="home-market__grid">
+      <figure class="home-market__visual">
+        <img src="{{ market.visual.src }}" alt="{{ market.visual.alt }}" loading="lazy" width="960" height="640">
+      </figure>
+      <article class="overview-card overview-card--brand overview-card--simple">
+        <p>{{ market.summary }}</p>
+        <a class="btn btn-secondary" href="{{ market.cta.url }}">{{ market.cta.label }}</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="home-approach" class="section home-approach">
+  <div class="container">
+    <h2 class="section-heading">{{ approach.heading }}</h2>
+    <div class="overview-grid overview-grid--simple">
+      {% for item in approach.items %}
+      <article class="overview-card overview-card--simple">
+        <span class="overview-card__icon">{{ item.icon }}</span>
+        <h3 class="overview-card__title">{{ item.title }}</h3>
+        <p>{{ item.text }}</p>
+      </article>
       {% endfor %}
     </div>
-    <div>
-      <a class="btn btn-secondary" href="{{ capabilities.cta.url }}">{{ capabilities.cta.label }}</a>
+  </div>
+</section>
+
+<section id="home-team" class="section section--surface-alt team-preview">
+  <div class="container">
+    <h2 class="section-heading">{{ team.heading }}</h2>
+    <div class="team-preview__grid">
+      {% for person in team.members %}
+      <article class="team-preview__card">
+        <figure class="team-preview__media">
+          <img src="{{ person.image }}" alt="{{ person.alt }}" loading="lazy" width="320" height="400">
+        </figure>
+        <h3 class="team-preview__name">{{ person.name }}</h3>
+        <p class="team-preview__role">{{ person.role }}</p>
+      </article>
+      {% endfor %}
+    </div>
+    <a class="btn btn-secondary" href="/about/">Meet the Full Team</a>
+  </div>
+</section>
+
+<section id="home-contact" class="section section--primary contact-cta">
+  <div class="container contact-cta__body">
+    <h2 class="section-heading">{{ contact.heading }}</h2>
+    <p>{{ contact.text }}</p>
+    <div class="btn-group">
+      <a class="btn btn-primary" href="{{ contact.ctas.primary.url }}">{{ contact.ctas.primary.label }}</a>
+      <a class="btn btn-secondary" href="{{ contact.ctas.secondary.url }}">{{ contact.ctas.secondary.label }}</a>
     </div>
   </div>
 </section>
 
-<section class="section section--surface">
-  <div class="container" style="display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:start;">
-    <div style="display:grid;gap:16px;">
-      <div class="section-heading">{{ land.preheading }}</div>
-      <h2 class="section-title">{{ land.heading }}</h2>
-      <p>{{ land.description }}</p>
-    </div>
-    <article class="card" style="display:grid;gap:12px;">
-      <strong style="color:#fff;letter-spacing:0.08em;text-transform:uppercase;">Investment Snapshot</strong>
-      <ul style="margin:0;padding-left:1.1rem;display:grid;gap:8px;">
-        {% for highlight in land.highlights %}
-        <li>{{ highlight }}</li>
-        {% endfor %}
-      </ul>
-    </article>
-  </div>
-  <div class="container" style="margin-top:24px;display:flex;gap:16px;flex-wrap:wrap;">
-    <a class="btn btn-primary" href="{{ land.ctas.primary.url }}">{{ land.ctas.primary.label }}</a>
-    <a class="btn btn-secondary" href="{{ land.ctas.secondary.url }}">{{ land.ctas.secondary.label }}</a>
-  </div>
-</section>
-
-<section id="request-briefing" class="section section--primary">
-  <div class="container" style="display:grid;gap:24px;max-width:720px;">
-    <div>
-      <div class="section-heading">Lead Capture</div>
-      <h2 class="section-title">Request a Confidential Briefing</h2>
-      <p>Share your details to unlock the pack and a leadership follow-up within one business day.</p>
-    </div>
-    {% include "partials/lead-form.njk" %}
-  </div>
+<section class="home-tagline">
+  <p>Amora Vida — Building the future of Portuguese real estate, one landmark at a time.</p>
 </section>
