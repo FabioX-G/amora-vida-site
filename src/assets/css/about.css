@@ -3,13 +3,30 @@
 #leadership .section-heading,
 #investors .section-heading,
 #recognition .section-heading {
-  font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 18px 0;
+  font-size: clamp(0.95rem, 2.1vw, 1.1rem);
+  font-weight: 600;
   letter-spacing: 0.18em;
-  color: rgba(124, 237, 255, 0.92);
+  text-transform: uppercase;
+  color: #0d213a;
+}
+
+#about-hero .section-heading::before,
+#leadership .section-heading::before,
+#investors .section-heading::before,
+#recognition .section-heading::before {
+  content: '';
+  width: 42px;
+  height: 2px;
+  background: linear-gradient(118deg, #14cbd0, #0aa2bd);
+  border-radius: 999px;
 }
 
 #about-hero .lead-paragraph {
-  color: rgba(227, 234, 255, 0.85);
+  color: var(--color-text);
   font-size: 1.02rem;
   line-height: 1.75;
   max-width: 66ch;
@@ -26,10 +43,8 @@
   inset-inline: calc(-1 * clamp(32px, 6vw, 80px));
   inset-block-start: -120px;
   height: clamp(240px, 36vw, 360px);
-  background: radial-gradient(ellipse at top, rgba(0, 255, 230, 0.18), transparent 55%),
-              radial-gradient(ellipse at top right, rgba(140, 90, 255, 0.16), transparent 60%);
-  filter: blur(6px);
-  opacity: 0.85;
+  background: linear-gradient(180deg, rgba(43, 39, 75, 0.16), transparent 72%);
+  opacity: 0.72;
   z-index: -1;
 }
 
@@ -47,12 +62,10 @@
   grid-template-columns: minmax(180px, clamp(200px, 24vw, 260px)) minmax(0, 1fr);
   gap: clamp(20px, 4vw, 40px);
   align-items: center;
-  background: linear-gradient(140deg, rgba(14, 18, 42, 0.94), rgba(5, 7, 24, 0.92));
+  background: var(--color-surface);
   border-radius: 26px;
-  border: 1px solid rgba(88, 255, 238, 0.22);
-  box-shadow:
-    0 26px 60px -38px rgba(0, 0, 0, 0.82),
-    0 0 0 1px rgba(132, 84, 255, 0.18) inset;
+  border: 1px solid rgba(35, 48, 84, 0.12);
+  box-shadow: var(--shadow-soft);
   overflow: hidden;
   padding: clamp(20px, 4vw, 28px);
 }
@@ -63,7 +76,7 @@
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
-  background: linear-gradient(120deg, rgba(86, 253, 255, 0.28), rgba(154, 86, 255, 0.24));
+  background: linear-gradient(140deg, rgba(47, 168, 160, 0.12), transparent 74%);
   opacity: 0;
   transition: opacity 220ms ease;
 }
@@ -75,8 +88,8 @@
   inset-block: clamp(18px, 3vw, 32px);
   width: 2px;
   border-radius: 999px;
-  background: linear-gradient(180deg, rgba(80, 255, 251, 0.88), rgba(147, 71, 255, 0.54));
-  box-shadow: 0 0 18px rgba(97, 244, 255, 0.55);
+  background: linear-gradient(180deg, rgba(47, 168, 160, 0.45), rgba(108, 142, 186, 0.32));
+  box-shadow: 0 0 14px rgba(47, 168, 160, 0.24);
   pointer-events: none;
 }
 
@@ -89,8 +102,8 @@
   position: relative;
   overflow: hidden;
   border-radius: clamp(18px, 4vw, 22px);
-  background: rgba(2, 4, 12, 0.9);
-  box-shadow: 0 30px 42px -36px rgba(0, 0, 0, 0.9);
+  background: var(--color-surface-muted);
+  box-shadow: 0 24px 44px -28px rgba(19, 32, 60, 0.18);
   width: min(100%, clamp(200px, 25vw, 260px));
   aspect-ratio: 3 / 4;
   justify-self: center;
@@ -101,8 +114,8 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(160deg, rgba(83, 230, 255, 0.22), rgba(147, 86, 255, 0.28));
-  mix-blend-mode: screen;
+  background: linear-gradient(160deg, rgba(78, 208, 195, 0.16), rgba(108, 142, 186, 0.16));
+  mix-blend-mode: multiply;
   opacity: 0;
   transition: opacity 220ms ease;
 }
@@ -133,7 +146,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: rgba(96, 255, 246, 0.9);
+  color: rgba(58, 72, 104, 0.7);
 }
 
 .team-member__name {
@@ -141,14 +154,14 @@
   font-size: clamp(1.5rem, 3vw, 1.9rem);
   font-weight: 600;
   letter-spacing: 0.01em;
-  color: #f5f8ff;
+  color: var(--color-heading);
 }
 
 .team-member__bio {
   margin: 0;
   font-size: 1.04rem;
   line-height: 1.74;
-  color: rgba(222, 232, 255, 0.88);
+  color: var(--color-text);
   max-width: 60ch;
 }
 
@@ -159,20 +172,20 @@
 .team-member__email {
   margin: clamp(10px, 2vw, 16px) 0 0;
   font-size: 0.98rem;
-  color: rgba(148, 208, 255, 0.9);
+  color: rgba(58, 72, 104, 0.76);
 }
 
 .team-member__email a {
   color: inherit;
   text-decoration: none;
-  border-bottom: 1px dashed rgba(119, 186, 255, 0.52);
+  border-bottom: 1px dashed rgba(35, 48, 84, 0.22);
   transition: color 180ms ease, border-color 180ms ease;
 }
 
 .team-member__email a:hover,
 .team-member__email a:focus {
-  color: rgba(230, 255, 255, 0.95);
-  border-bottom-color: rgba(230, 255, 255, 0.9);
+  color: rgba(27, 35, 53, 0.92);
+  border-bottom-color: rgba(47, 168, 160, 0.45);
 }
 
 @media (max-width: 960px) {
@@ -198,7 +211,7 @@
     inset-block-end: auto;
     width: clamp(120px, 30vw, 160px);
     height: 2px;
-    background: linear-gradient(90deg, rgba(88, 255, 238, 0.86), rgba(147, 86, 255, 0.54));
+    background: linear-gradient(90deg, rgba(47, 168, 160, 0.4), rgba(108, 142, 186, 0.28));
   }
 
   .team-member__name {

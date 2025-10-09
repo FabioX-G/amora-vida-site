@@ -11,10 +11,10 @@
 .market-hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(28px, 6vw, 52px);
+  gap: clamp(24px, 5vw, 48px);
   align-items: end;
-  min-height: clamp(420px, 58vh, 560px);
-  padding-block: clamp(48px, 9vh, 80px);
+  min-height: clamp(380px, 54vh, 520px);
+  padding-block: clamp(56px, 12vh, 88px);
 }
 
 .market-hero__copy {
@@ -59,10 +59,10 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(35, 48, 84, 0.12);
   border-radius: 16px;
-  background: rgba(10, 14, 28, 0.55);
-  box-shadow: 0 16px 38px -28px rgba(0, 0, 0, 0.6);
+  background: #ffffff;
+  box-shadow: var(--shadow-soft);
   padding: 16px 18px;
   transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -79,7 +79,7 @@
   margin: 8px 0 0;
   font-weight: 600;
   font-size: 0.94rem;
-  color: rgba(244, 249, 255, 0.94);
+  color: var(--color-heading);
   font-variant-numeric: tabular-nums;
 }
 
@@ -89,16 +89,16 @@
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(35, 48, 84, 0.16);
   border-radius: 999px;
-  color: rgba(238, 243, 255, 0.7);
-  opacity: 0.7;
+  color: rgba(58, 72, 104, 0.65);
+  background: rgba(236, 240, 249, 0.6);
 }
 
 .implication {
   margin: 0;
   font-size: 0.84rem;
-  color: rgba(232, 236, 255, 0.76);
+  color: rgba(58, 72, 104, 0.72);
   max-width: 30ch;
 }
 
@@ -113,15 +113,15 @@
 
 .card--signal:hover,
 .card--signal:focus-within {
-  border-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(35, 48, 84, 0.2);
   transform: translateY(-2px);
-  box-shadow: 0 20px 44px -32px rgba(0, 0, 0, 0.65);
+  box-shadow: 0 26px 48px -28px rgba(19, 32, 60, 0.2);
 }
 
 .signals-note {
   margin: clamp(18px, 4vw, 28px) 0 0;
   font-size: 0.9rem;
-  color: rgba(210, 224, 255, 0.72);
+  color: rgba(58, 72, 104, 0.7);
   text-align: center;
   max-width: 56ch;
   margin-left: auto;
@@ -140,7 +140,7 @@
 
 .priority-corridor .lead {
   font-size: 1.05rem;
-  opacity: 0.88;
+  color: rgba(58, 72, 104, 0.78);
   max-width: 60ch;
   margin: 0 auto 1.6rem auto;
 }
@@ -148,8 +148,8 @@
 .priority-corridor__map {
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(0, 255, 255, 0.08);
-  box-shadow: 0 0 30px rgba(0, 219, 224, 0.08);
+  border: 1px solid rgba(35, 48, 84, 0.12);
+  box-shadow: var(--shadow-soft);
   margin: 0 auto 1.2rem auto;
 }
 
@@ -168,24 +168,24 @@
 }
 
 .tag {
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(35, 48, 84, 0.16);
   border-radius: 999px;
   padding: 6px 12px;
   font-size: 0.8rem;
   letter-spacing: 0.05em;
-  color: rgba(232, 236, 255, 0.9);
-  background: rgba(0, 255, 255, 0.08);
+  color: var(--color-text);
+  background: rgba(47, 168, 160, 0.1);
   transition: all 0.25s ease;
 }
 
 .tag:hover {
-  background: rgba(0, 255, 255, 0.16);
+  background: rgba(47, 168, 160, 0.18);
   transform: translateY(-2px);
 }
 
 .priority-corridor .caption {
   font-size: 0.9rem;
-  color: rgba(232, 236, 255, 0.7);
+  color: var(--color-text-muted);
   margin-top: 0.6rem;
   max-width: 62ch;
   margin-left: auto;
@@ -200,13 +200,13 @@
   align-items: start;
   border-radius: 24px;
   padding: clamp(22px, 4vw, 32px);
-  background: linear-gradient(150deg, rgba(12, 18, 36, 0.92), rgba(2, 6, 18, 0.9));
-  border: 1px solid rgba(97, 244, 255, 0.26);
-  box-shadow: 0 28px 60px -36px rgba(0, 0, 0, 0.6);
+  background: var(--color-surface);
+  border: 1px solid rgba(35, 48, 84, 0.12);
+  box-shadow: var(--shadow-elevated);
 }
 
 .validation-block__quotes {
-  color: rgba(225, 234, 255, 0.86);
+  color: var(--color-text);
 }
 
 .quotes {
@@ -221,7 +221,7 @@
   margin: 0 0 6px;
   font-size: 1.02rem;
   line-height: 1.6;
-  color: rgba(233, 240, 255, 0.9);
+  color: var(--color-text);
   font-style: italic;
 }
 
@@ -230,16 +230,16 @@
   font-size: 0.8rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(161, 198, 255, 0.72);
+  color: var(--color-text-muted);
 }
 
 .validation-block__table {
-  background: rgba(5, 12, 26, 0.92);
-  border: 1px solid rgba(148, 208, 255, 0.3);
+  background: var(--color-surface-muted);
+  border: 1px solid rgba(35, 48, 84, 0.12);
   border-radius: 22px;
   padding: clamp(18px, 3vw, 24px);
   align-self: start;
-  box-shadow: inset 0 0 0 1px rgba(88, 255, 238, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(47, 168, 160, 0.08);
 }
 
 .yield-table {
@@ -247,7 +247,7 @@
   border-collapse: separate;
   border-spacing: 0 6px;
   font-size: 0.95rem;
-  color: rgba(224, 235, 255, 0.9);
+  color: var(--color-text);
   font-variant-numeric: tabular-nums;
 }
 
@@ -255,7 +255,7 @@
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(134, 242, 255, 0.88);
+  color: rgba(57, 67, 103, 0.68);
   text-align: left;
   padding: 0 10px 8px;
 }
@@ -265,7 +265,8 @@
 }
 
 .yield-table tbody tr {
-  background: rgba(10, 14, 28, 0.55);
+  background: #ffffff;
+  border: 1px solid rgba(35, 48, 84, 0.08);
 }
 
 .yield-table tbody tr td:first-child {
@@ -281,7 +282,7 @@
 .validation-block__footnote {
   margin: clamp(16px, 3vw, 24px) 0 0;
   font-size: 0.8rem;
-  color: rgba(160, 196, 255, 0.72);
+  color: var(--color-text-muted);
 }
 
 .validation-block__footnote a {
