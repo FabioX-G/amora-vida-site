@@ -5,7 +5,7 @@ styles:
 title: "Why Amora–Seixal Is Gaining Momentum | Amora Vida"
 description: "Independent demand, access, and pricing signals show why investors should act on Amora Vida’s 19-hectare waterfront estate."
 ---
-<section class="section section--slab keyline-bottom">
+<section class="section">
   <div class="container market-hero">
     <div class="market-hero__copy">
       <h1 class="section-title">Seixal Momentum</h1>
@@ -17,7 +17,7 @@ description: "Independent demand, access, and pricing signals show why investors
   </div>
 </section>
 
-<section class="section section--slab">
+<section class="section">
   <div class="container">
     <h2 class="section-title">Current Signals in Seixal</h2>
     <div class="cards-grid cards-grid--tight">
@@ -62,7 +62,7 @@ description: "Independent demand, access, and pricing signals show why investors
   </div>
 </section>
 
-<section class="section">
+<section class="section section--slab">
   <div class="container priority-corridor">
     <h2 class="section-title">Priority Corridor</h2>
     <p class="lead">
@@ -135,9 +135,8 @@ description: "Independent demand, access, and pricing signals show why investors
   </div>
 </section>
 
-<section class="section">
+<section class="section section--bullets">
   <div class="container container--narrow">
-    <div class="section-heading">Scarcity</div>
     <h2 class="section-title">Scarcity Supports Pricing Power</h2>
     <div class="prose prose--tight">
       <ul>
@@ -149,9 +148,8 @@ description: "Independent demand, access, and pricing signals show why investors
   </div>
 </section>
 
-<section class="section section--slab">
+<section class="section section--slab section--bullets">
   <div class="container container--narrow">
-    <div class="section-heading">Implications</div>
     <h2 class="section-title">What This Means for Our 19-Hectare Estate</h2>
     <div class="prose prose--tight">
       <ul>
@@ -164,11 +162,22 @@ description: "Independent demand, access, and pricing signals show why investors
   </div>
 </section>
 
-<section class="section keyline-top">
-  <div class="container conversion-footer">
-    <h2 class="section-title">Convert Momentum into an Acquisition</h2>
-    <div class="conversion-footer__actions">
-      <a class="btn btn-secondary" href="/contact/">Schedule a Briefing</a>
-    </div>
-  </div>
-</section>
+<script>
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    const cards = Array.from(document.querySelectorAll('.card--signal'));
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    cards.forEach((card) => obs.observe(card));
+  } else {
+    document.querySelectorAll('.card--signal').forEach((card) => {
+      card.classList.add('is-visible');
+    });
+  }
+</script>

@@ -1,4 +1,16 @@
-/* Team */
+/* Hero */
+#about-hero {
+  background: var(--slab-1, #f8fafc);
+  border-top: 1px solid var(--stroke-100, #e7eef5);
+  border-bottom: 1px solid var(--stroke-100, #e7eef5);
+  padding-block: clamp(56px, 10vh, 88px);
+}
+
+.about-hero__content {
+  display: grid;
+  gap: 24px;
+}
+
 #about-hero .section-heading,
 #leadership .section-heading,
 #investors .section-heading,
@@ -26,87 +38,52 @@
 }
 
 #about-hero .lead-paragraph {
-  color: var(--color-text);
+  color: var(--ink-700, #233b54);
   font-size: 1.02rem;
-  line-height: 1.75;
-  max-width: 66ch;
+  line-height: 1.7;
+  max-width: 60ch;
 }
 
 #leadership {
-  position: relative;
-  isolation: isolate;
+  background: var(--slab-0, #ffffff);
 }
 
-#leadership::before {
-  content: "";
-  position: absolute;
-  inset-inline: calc(-1 * clamp(32px, 6vw, 80px));
-  inset-block-start: -120px;
-  height: clamp(240px, 36vw, 360px);
-  background: linear-gradient(180deg, rgba(43, 39, 75, 0.16), transparent 72%);
-  opacity: 0.72;
-  z-index: -1;
-}
-
+/* Team layout */
 .team-list {
-  margin: clamp(36px, 6vw, 64px) 0 0;
+  margin-top: clamp(28px, 5vw, 48px);
   list-style: none;
   padding: 0;
   display: grid;
-  gap: clamp(32px, 5vw, 56px);
+  gap: clamp(18px, 3.2vw, 28px);
 }
 
 .team-member {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(180px, clamp(200px, 24vw, 260px)) minmax(0, 1fr);
-  gap: clamp(20px, 4vw, 40px);
-  align-items: center;
-  background: var(--color-surface);
-  border-radius: 26px;
-  border: 1px solid rgba(35, 48, 84, 0.12);
-  box-shadow: var(--shadow-soft);
+  grid-template-columns: minmax(180px, 220px) minmax(0, 1fr);
+  gap: clamp(12px, 2.6vw, 18px);
+  align-items: start;
+  background: linear-gradient(140deg, rgba(249, 252, 255, 0.94), #ffffff 60%);
+  border-radius: 16px;
+  border: 1px solid rgba(35, 48, 84, 0.09);
+  box-shadow: 0 12px 28px -18px rgba(20, 40, 70, 0.16);
+  padding: clamp(18px, 3vw, 24px);
   overflow: hidden;
-  padding: clamp(20px, 4vw, 28px);
 }
 
-.team-member::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  background: linear-gradient(140deg, rgba(47, 168, 160, 0.12), transparent 74%);
-  opacity: 0;
-  transition: opacity 220ms ease;
-}
-
+.team-member::before,
 .team-member::after {
-  content: "";
-  position: absolute;
-  inset-inline-start: clamp(14px, 2vw, 24px);
-  inset-block: clamp(18px, 3vw, 32px);
-  width: 2px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, rgba(47, 168, 160, 0.45), rgba(108, 142, 186, 0.32));
-  box-shadow: 0 0 14px rgba(47, 168, 160, 0.24);
-  pointer-events: none;
-}
-
-.team-member:hover::before,
-.team-member:focus-within::before {
-  opacity: 0.5;
+  content: none;
 }
 
 .team-member__media {
   position: relative;
   overflow: hidden;
-  border-radius: clamp(18px, 4vw, 22px);
+  border-radius: 12px;
   background: var(--color-surface-muted);
-  box-shadow: 0 24px 44px -28px rgba(19, 32, 60, 0.18);
-  width: min(100%, clamp(200px, 25vw, 260px));
-  aspect-ratio: 3 / 4;
-  justify-self: center;
+  box-shadow: 0 12px 24px -16px rgba(20, 40, 70, 0.12);
+  width: clamp(180px, 22vw, 220px);
+  aspect-ratio: 4 / 5;
 }
 
 .team-member__media::after {
@@ -122,7 +99,7 @@
 
 .team-member:hover .team-member__media::after,
 .team-member:focus-within .team-member__media::after {
-  opacity: 0.65;
+  opacity: 0.55;
 }
 
 .team-member__media img {
@@ -136,43 +113,92 @@
 
 .team-member__content {
   display: grid;
-  gap: clamp(12px, 2.4vw, 20px);
-  padding-inline-start: clamp(12px, 2vw, 20px);
-  align-content: flex-start;
+  gap: clamp(8px, 2vw, 14px);
+  align-content: start;
+  max-width: clamp(48ch, 64vw, 65ch);
+  padding-inline-start: clamp(10px, 1.8vw, 16px);
+}
+
+.team-member__intro {
+  display: grid;
+  gap: clamp(6px, 1.6vw, 12px);
+  align-content: start;
+  padding-bottom: clamp(6px, 1.4vw, 10px);
+  border-bottom: 1px solid rgba(35, 48, 84, 0.08);
+  position: relative;
+  padding-inline-start: clamp(12px, 2vw, 18px);
+}
+
+.team-member__intro::before {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 4px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(20, 143, 162, 0.8), rgba(9, 92, 122, 0.5));
 }
 
 .team-member__role {
   margin: 0;
-  font-size: 0.75rem;
-  letter-spacing: 0.24em;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(58, 72, 104, 0.7);
+  color: rgba(58, 72, 104, 0.68);
 }
 
 .team-member__name {
   margin: 0;
-  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  font-size: clamp(1.22rem, 2.1vw, 1.45rem);
   font-weight: 600;
   letter-spacing: 0.01em;
-  color: var(--color-heading);
+  color: var(--ink-900, #0d213a);
+}
+
+
+.team-summary {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: var(--ink-700, #233b54);
+  background: rgba(12, 116, 140, 0.06);
+  border-radius: 10px;
+  padding: clamp(6px, 1.4vw, 10px) clamp(10px, 2vw, 14px);
+  font-weight: 500;
+}
+
+.team-member__bio-group {
+  display: grid;
+  gap: clamp(8px, 1.8vw, 12px);
+  margin-top: clamp(12px, 2.4vw, 18px);
 }
 
 .team-member__bio {
   margin: 0;
-  font-size: 1.04rem;
-  line-height: 1.74;
+  font-size: 1.02rem;
+  line-height: 1.6;
   color: var(--color-text);
-  max-width: 60ch;
+  position: relative;
+  padding-left: clamp(10px, 2vw, 16px);
 }
 
-.team-member__bio + .team-member__bio {
-  margin-top: clamp(6px, 1vw, 10px);
+.team-member__bio::before {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 3px;
+  border-radius: 999px;
+  background: rgba(35, 128, 154, 0.22);
 }
 
 .team-member__email {
-  margin: clamp(10px, 2vw, 16px) 0 0;
-  font-size: 0.98rem;
+  margin-top: clamp(8px, 1.8vw, 12px);
+  font-size: 0.96rem;
   color: rgba(58, 72, 104, 0.76);
+  max-width: 65ch;
+  padding-top: clamp(6px, 1.4vw, 10px);
+  border-top: 1px solid rgba(35, 48, 84, 0.08);
 }
 
 .team-member__email a {
@@ -190,43 +216,28 @@
 
 @media (max-width: 960px) {
   .team-member {
-    grid-template-columns: 1fr;
-    padding: clamp(20px, 7vw, 36px);
-    border-radius: 24px;
+    grid-template-columns: minmax(0, 1fr);
+    padding: clamp(16px, 6vw, 24px);
+    gap: clamp(12px, 4vw, 18px);
   }
 
   .team-member__media {
-    width: min(100%, clamp(220px, 60vw, 340px));
-    max-width: 320px;
+    width: min(100%, clamp(180px, 52vw, 260px));
+    justify-self: center;
   }
 
   .team-member__content {
+    gap: clamp(10px, 4vw, 16px);
+    max-width: 100%;
     padding-inline-start: 0;
-    gap: clamp(16px, 5vw, 24px);
   }
 
-  .team-member::after {
-    inset-inline-start: clamp(18px, 6vw, 24px);
-    inset-block-start: clamp(18px, 6vw, 24px);
-    inset-block-end: auto;
-    width: clamp(120px, 30vw, 160px);
-    height: 2px;
-    background: linear-gradient(90deg, rgba(47, 168, 160, 0.4), rgba(108, 142, 186, 0.28));
+  .team-member__intro {
+    padding-inline-start: clamp(10px, 4vw, 16px);
   }
 
   .team-member__name {
-    font-size: clamp(1.32rem, 6vw, 1.7rem);
-  }
-
-  .team-member__bio {
-    font-size: 1rem;
-    line-height: 1.7;
-    max-width: 100%;
-  }
-
-  .team-member__email {
-    font-size: 0.95rem;
-    word-break: break-word;
+    font-size: clamp(1.28rem, 6.5vw, 1.6rem);
   }
 }
 
@@ -235,30 +246,56 @@
     padding-inline-start: 0;
   }
 
-  .team-member__bio {
+  .team-summary {
     font-size: 0.97rem;
-    line-height: 1.66;
+    line-height: 1.62;
   }
 
-  .team-member {
-    padding: clamp(18px, 8vw, 30px);
+  .team-member__email {
+    font-size: 0.95rem;
+    word-break: break-word;
   }
+}
 
-  .team-member__role {
-    font-size: 0.68rem;
-    letter-spacing: 0.2em;
-  }
+#investors p,
+#recognition p {
+  max-width: 60ch;
+  line-height: 1.65;
+  color: var(--ink-700, #233b54);
+}
 
-  .team-member__name {
-    font-size: clamp(1.22rem, 7vw, 1.45rem);
-  }
+#investors .container,
+#recognition .container {
+  display: grid;
+  gap: clamp(18px, 3vw, 26px);
+  max-width: min(780px, 90vw);
+}
 
-  .team-member__media {
-    max-width: 280px;
-  }
+#investors {
+  background: linear-gradient(180deg, rgba(248, 251, 253, 0.9), #ffffff 85%);
+}
 
-  #leadership .section-heading {
-    font-size: 0.92rem;
-    letter-spacing: 0.16em;
-  }
+#investors::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(95deg, rgba(13, 110, 140, 0.08), transparent 65%);
+  pointer-events: none;
+}
+
+#recognition {
+  position: relative;
+  background: #ffffff;
+}
+
+#recognition::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 30, 60, 0.04), rgba(10, 30, 60, 0.1));
+  pointer-events: none;
+}
+
+#recognition .container {
+  justify-items: start;
 }

@@ -72,12 +72,11 @@ contact:
       label: "Email info@amora-vida.com"
       url: "mailto:info@amora-vida.com"
 ---
-<section class="hero hero--dashboard">
+<section class="section section--slab hero hero--dashboard">
   <div class="container hero__body">
     <div class="hero__intro">
       <h1 class="hero__headline">{{ hero.title }}</h1>
       <p class="hero__mission">{{ hero.mission }}</p>
-      <a class="btn btn-primary" href="{{ hero.cta.url }}">{{ hero.cta.label }}</a>
     </div>
     <figure class="hero__media">
       <img src="{{ hero.media.src }}" alt="{{ hero.media.alt }}" loading="lazy" width="1280" height="720">
@@ -85,45 +84,48 @@ contact:
   </div>
 </section>
 
-<section id="home-opportunity" class="section section--slab home-opportunity">
+<section id="home-opportunity" class="section section--base home-opportunity">
   <div class="container home-opportunity__body">
     <figure class="home-opportunity__media">
       <img src="{{ opportunity.image.src }}" alt="{{ opportunity.image.alt }}" loading="lazy" width="960" height="640">
     </figure>
     <div class="home-opportunity__content">
-      <h2 class="section-heading">{{ opportunity.heading }}</h2>
+      <p class="eyebrow">Current Opportunity</p>
+      <h2 class="home-section__title">Amora, Seixal · 19-hectare Waterfront Estate</h2>
       <p>{{ opportunity.summary }}</p>
       <div class="land-overview__chips land-overview__chips--left" role="list">
         {% for metric in opportunity.metrics %}
         <span role="listitem">{{ metric }}</span>
         {% endfor %}
       </div>
-      <a class="btn btn-primary" href="/land-opportunity/">Learn More</a>
+      <div class="home-opportunity__actions">
+        <a class="btn btn-primary" href="/land-opportunity/">Explore Current Opportunity</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="home-market" class="section home-market">
+<section id="home-market" class="section section--slab home-market">
   <div class="container home-market__body">
     <h2 class="section-heading">{{ market.heading }}</h2>
     <div class="home-market__grid">
-      <figure class="home-market__visual">
+      <figure class="home-market__visual map-card">
         <img src="{{ market.visual.src }}" alt="{{ market.visual.alt }}" loading="lazy" width="960" height="640">
       </figure>
-      <article class="overview-card overview-card--brand overview-card--simple">
+      <article class="home-market__content">
         <p>{{ market.summary }}</p>
-        <a class="btn btn-secondary" href="{{ market.cta.url }}">{{ market.cta.label }}</a>
+        <a class="inline-link" href="{{ market.cta.url }}">{{ market.cta.label }}</a>
       </article>
     </div>
   </div>
 </section>
 
-<section id="home-approach" class="section section--slab home-approach">
+<section id="home-approach" class="section section--base home-approach">
   <div class="container">
     <h2 class="section-heading">{{ approach.heading }}</h2>
     <div class="overview-grid overview-grid--simple">
       {% for item in approach.items %}
-      <article class="overview-card overview-card--simple">
+      <article class="overview-card overview-card--simple approach-card">
         <span class="overview-card__icon">{{ item.icon }}</span>
         <h3 class="overview-card__title">{{ item.title }}</h3>
         <p>{{ item.text }}</p>
@@ -134,11 +136,11 @@ contact:
 </section>
 
 <section id="home-team" class="section section--slab team-preview">
-  <div class="container">
-    <h2 class="section-heading">{{ team.heading }}</h2>
-    <div class="team-preview__grid">
+  <div class="container team-preview__container">
+    <h2 class="section-heading">Meet the Team</h2>
+    <div class="team-preview__grid leadership-cards">
       {% for person in team.members %}
-      <article class="team-preview__card">
+      <article class="team-preview__card leader-card">
         <figure class="team-preview__media">
           <img src="{{ person.image }}" alt="{{ person.alt }}" loading="lazy" width="320" height="400">
         </figure>
@@ -147,20 +149,15 @@ contact:
       </article>
       {% endfor %}
     </div>
-    <a class="btn btn-secondary" href="/about/">Meet the Full Team</a>
-  </div>
-</section>
-
-<section id="home-contact" class="section section--slab contact-cta keyline-top">
-  <div class="container contact-cta__body">
-    <h2 class="section-heading">{{ contact.heading }}</h2>
-    <p>{{ contact.text }}</p>
-    <div class="btn-group">
-      <a class="btn btn-primary" href="{{ contact.ctas.primary.url }}">{{ contact.ctas.primary.label }}</a>
-      <a class="btn btn-secondary" href="{{ contact.ctas.secondary.url }}">{{ contact.ctas.secondary.label }}</a>
+    <div class="team-preview__cta">
+      <a class="btn btn-primary" href="/about/">Meet the Full Team</a>
     </div>
   </div>
 </section>
+
+<p class="muted note">Prefer a briefing? <a class="inline-link" href="/contact/">Contact Investor Relations</a>.</p>
+
+<div class="footer-divider" aria-hidden="true"></div>
 
 <section class="home-tagline">
   <p>Amora Vida — Building the future of Portuguese real estate, one landmark at a time.</p>

@@ -5,9 +5,9 @@ styles:
 title: About Amora Vida
 description: "Amora Vida unites Portuguese roots with international capital to deliver heritage-respectful developments like Quinta do Paço do Infante."
 ---
-<section id="about-hero" class="section section--surface">
-  <div class="container" style="display:grid;gap:24px;">
-    <div class="section-heading">About Us</div>
+<section id="about-hero" class="section section--slab">
+  <div class="container about-hero__content">
+    <div class="section-heading">Who We Are</div>
     <p class="lead-paragraph">Amora Vida is a real estate investment company that acquires, develops, and sells land projects at different stages of the development cycle.</p>
   </div>
 </section>
@@ -24,9 +24,8 @@ description: "Amora Vida unites Portuguese roots with international capital to d
       width: 560,
       height: 700
     },
+    summary: 'Leads investor relations and fundraising while shaping Amora Vida’s strategy and building the core team, partnering closely with architecture, planning, and market analytics to turn opportunities into financeable projects and long-term partnerships.',
     bio: [
-      'Fábio leads investor relations and fundraising while setting Amora Vida\'s strategic direction and building the core team.',
-      'He partners closely with architecture, planning, and market analytics to turn opportunities into financeable projects and long-term partnerships.',
       'Fábio earned a B.S. from Syracuse University (Environment, Sustainability & Policy; Business & Entrepreneurship, summa cum laude), with strong finance and accounting training--and a side passion for physics and "vibe-coding." Before Amora Vida he founded student ventures and research initiatives, experiences that shaped his practical approach to capital orchestration, stakeholder alignment, and execution at speed.'
     ]
   },
@@ -41,8 +40,8 @@ description: "Amora Vida unites Portuguese roots with international capital to d
       width: 560,
       height: 700
     },
+    summary: 'Oversees the full development cycle—from feasibility and licensing through execution and asset strategy.',
     bio: [
-      'Margarida oversees the full development cycle--from feasibility and investment structuring through licensing, execution, and long-term asset strategy--ensuring every project is resilient and value-accretive.',
       'She holds a Mestrado in Urban Environment Planning & Project (FAUP/FEUP, Univ. of Porto) and a Licenciatura in Architecture (Univ. of Porto). With 20+ years leading urban regeneration, licensing, and asset enhancement across Portugal (and experience as an adjunct professor in landscape design), she steers masterplans, interprets regulations, manages loteamento processes, and synchronizes design and engineering partners to deliver phased programs that protect heritage identities.'
     ]
   },
@@ -57,8 +56,8 @@ description: "Amora Vida unites Portuguese roots with international capital to d
       width: 560,
       height: 700
     },
+    summary: 'Transforms land analysis into coherent architectural concepts and documentation for waterfront development.',
     bio: [
-      'Ana Karina develops design studies and documentation that translate programmatic needs into coherent, livable spaces--bridging PDM/land analysis with architectural concept and detail.',
       'She is completing a Mestrado Integrado em Arquitectura (Integrated B.Arch/M.Arch) at the University of Lisbon, School of Architecture. Prior studio and academic work spans housing and mixed-use projects around Lisbon, informing her adaptive approach to waterfront placemaking, typology mixes, and restoration design language in heritage contexts.'
     ]
   },
@@ -73,8 +72,8 @@ description: "Amora Vida unites Portuguese roots with international capital to d
       width: 560,
       height: 700
     },
+    summary: 'Builds the data backbone for investment decisions, aggregating national datasets into actionable models.',
     bio: [
-      'Ricardo builds the data backbone that guides Amora Vida\'s investment decisions--scraping and aggregating Portugal/EU datasets, sizing programs (m2) and typology mixes, and generating capital-stack and sensitivity models that forecast pricing from live market signals.',
       'He earned a B.S. in Marketing Management (IPAM) and is pursuing a Master\'s in Data-Driven Marketing (NOVA IMS). Before Amora Vida he delivered marketing analytics and dashboarding projects across FMCG and services, experience he now channels into our secondary-research database and performance analytics for web and social.'
     ]
   },
@@ -89,14 +88,14 @@ description: "Amora Vida unites Portuguese roots with international capital to d
       width: 560,
       height: 700
     },
+    summary: 'Leads primary research to track demand and pricing momentum across Greater Lisbon and synthesize insights.',
     bio: [
-      'Carolina leads primary research--interviewing buyers and agents, tracking demand and pricing momentum across Greater Lisbon, and synthesizing frontline insights into concise investor briefs and positioning narratives.',
       'She holds a B.S. in Marketing (IPAM) and is completing a Master\'s in Data-Driven Marketing (NOVA IMS). Prior work focused on field research and content development for social and web, which she now combines with structured survey design and qualitative analysis to keep each project story grounded in current market reality.'
     ]
   }
 ] %}
 
-<section id="leadership" class="section">
+<section id="leadership" class="section section--base">
   <div class="container">
     <div class="section-heading">Meet the Team</div>
     <ul id="team-list" class="team-list" aria-label="Leadership">
@@ -107,12 +106,19 @@ description: "Amora Vida unites Portuguese roots with international capital to d
                alt="{{ member.image.alt }}" loading="lazy" width="{{ member.image.width }}" height="{{ member.image.height }}">
         </div>
         <div class="team-member__content" role="group" aria-labelledby="name-{{ member.id }}">
-          <p class="team-member__role" id="role-{{ member.id }}">{{ member.role | safe }}</p>
-          <h3 id="name-{{ member.id }}" class="team-member__name">{{ member.name }}</h3>
+          <div class="team-member__intro">
+            <p class="team-member__role" id="role-{{ member.id }}">{{ member.role | safe }}</p>
+            <h3 id="name-{{ member.id }}" class="team-member__name">{{ member.name }}</h3>
+            {% if member.summary %}
+            <p class="team-summary">{{ member.summary | safe }}</p>
+            {% endif %}
+          </div>
           {% if member.bio %}
+          <div class="team-member__bio-group">
             {% for paragraph in member.bio %}
             <p class="team-member__bio">{{ paragraph | safe }}</p>
             {% endfor %}
+          </div>
           {% endif %}
           <p class="team-member__email"><a href="mailto:{{ member.email }}">{{ member.email }}</a></p>
         </div>
@@ -122,7 +128,7 @@ description: "Amora Vida unites Portuguese roots with international capital to d
   </div>
 </section>
 
-<section id="investors" class="section section--surface-alt">
+<section id="investors" class="section section--slab">
   <div class="container" style="display:grid;gap:24px;">
     <div class="section-heading">Our Investors</div>
     <p>Amora Vida and Surpora Lda. are backed by overseas Chinese entrepreneurs who have lived in Portugal for nearly three decades. As naturalised citizens, they reinvest in the communities where they operate.</p>
@@ -132,7 +138,7 @@ description: "Amora Vida unites Portuguese roots with international capital to d
   </div>
 </section>
 
-<section id="recognition" class="section">
+<section id="recognition" class="section section--base">
   <div class="container">
     <div class="section-heading">Recognition</div>
     <p>Amora Vida’s leadership has been featured in national outlets including <em>Mais Magazine</em> and <em>Expresso</em>, highlighting our focus on women’s leadership in real estate and transparent governance.</p>
