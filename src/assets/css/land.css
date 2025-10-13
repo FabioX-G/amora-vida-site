@@ -1,12 +1,16 @@
 /* Land opportunity */
+.copy {
+  max-width: 60ch;
+}
+
 .land-hero {
   position: relative;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-  min-height: 520px;
-  height: min(80vh, 820px);
-  padding: clamp(48px, 12vh, 64px);
+  min-height: 480px;
+  height: min(76vh, 760px);
+  padding: clamp(48px, 12vh, 60px);
   margin: 0;
   background: url('/assets/images/LandScapeOverview1.jpg') center/cover no-repeat;
   color: rgba(255, 255, 255, 0.95);
@@ -36,16 +40,16 @@
   position: relative;
   z-index: 1;
   display: grid;
-  gap: 18px;
-  max-width: 560px;
+  gap: clamp(16px, 3vw, 20px);
+  max-width: 60ch;
   text-align: left;
   animation: land-hero-fade 1s ease-out forwards;
 }
 
 .land-hero__content h1 {
   margin: 0;
-  font-size: clamp(2.1rem, 4.6vw, 3.1rem);
-  line-height: 1.2;
+  font-size: clamp(1.9rem, 4.6vw, 2.6rem);
+  line-height: var(--lh-tight);
   font-weight: 600;
   color: inherit;
   text-shadow: 0 12px 26px rgba(4, 20, 36, 0.34);
@@ -53,7 +57,7 @@
 
 .land-hero__content p {
   margin: 0;
-  font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+  font-size: clamp(1rem, 2.3vw, 1.18rem);
   color: rgba(255, 255, 255, 0.86);
   text-shadow: 0 10px 24px rgba(4, 20, 36, 0.32);
 }
@@ -78,7 +82,7 @@
 @media (max-width: 960px) {
   .land-hero {
     padding: clamp(40px, 12vw, 56px);
-    min-height: clamp(440px, 80vh, 680px);
+    min-height: clamp(420px, 76vh, 640px);
   }
 }
 
@@ -116,11 +120,11 @@
   }
 
   .land-hero__content h1 {
-    font-size: clamp(1.8rem, 6vw, 2.4rem);
+    font-size: clamp(1.7rem, 6vw, 2.2rem);
   }
 
   .land-hero__content p {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
 }
 
@@ -135,6 +139,15 @@
   max-width: 960px;
 }
 
+.snapshot .section-heading,
+.connectivity .section-heading,
+.value-path .section-heading {
+  font-size: clamp(1rem, 2.4vw, 1.22rem);
+  letter-spacing: 0.16em;
+  color: rgba(13, 33, 58, 0.96);
+  margin-bottom: 18px;
+}
+
 .snapshot__chips {
   display: flex;
   flex-wrap: wrap;
@@ -144,9 +157,11 @@
 
 
 .snapshot__support {
-  margin: 0;
+  margin: 0 auto;
   text-align: center;
   color: #233b54;
+  max-width: 60ch;
+  line-height: var(--lh-body);
 }
 
 .snapshot__meta {
@@ -195,6 +210,7 @@
   display: grid;
   gap: 16px;
   color: #233b54;
+  max-width: 60ch;
 }
 
 .connectivity__pointers {
@@ -225,6 +241,7 @@
   margin: 0;
   font-size: 0.88rem;
   color: rgba(58, 72, 104, 0.7);
+  line-height: var(--lh-body);
 }
 
 .connectivity__map {

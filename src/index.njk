@@ -11,17 +11,14 @@ hero:
   media:
     src: "/assets/images/LandScapeOverview1.jpg"
     alt: "Panoramic view across Lisbon’s south bank waterfront"
-  cta:
-    label: "Explore Current Opportunity"
-    url: "/land-opportunity/"
 opportunity:
-  heading: "Current Opportunity — Amora, Seixal (19-hectare waterfront estate)"
+  heading: "Amora, Seixal Waterfront Estate"
   summary: "A scarce 19-hectare waterfront estate positioned for Lisbon’s south-bank growth cycle."
   metrics:
     - "19 hectares total land"
-    - "25,000 m² GCA (PIP)"
+    - "25,000 m² GCA · PIP submitted"
     - "100–150 units potential"
-    - "16 min to Lisbon"
+    - "~20 min to Lisbon"
   image:
     src: "/assets/images/LandBoundary%20Overview.png"
     alt: "Land boundary overview of Quinta do Paço do Infante"
@@ -47,7 +44,7 @@ approach:
       title: "Exit Transparently"
       text: "Define investor reporting and exit pathways from acquisition through sale."
 team:
-  heading: "Leadership at a Glance"
+  heading: "Meet the Team"
   members:
     - name: "Fábio Xie"
       role: "Founder · Strategy & Capital"
@@ -61,104 +58,97 @@ team:
       role: "Architect · Design & Analysis"
       image: "/assets/images/AV Site Team Photos/KarinaProfile.png"
       alt: "Portrait of Ana Karina Peixoto"
-contact:
-  heading: "Interested in learning more?"
-  text: "Request the investment overview or connect with the leadership team to access the full technical dossiers."
-  ctas:
-    primary:
-      label: "Contact Investor Relations"
-      url: "/contact/"
-    secondary:
-      label: "Email info@amora-vida.com"
-      url: "mailto:info@amora-vida.com"
 ---
-<section class="section section--slab hero hero--dashboard">
-  <div class="container hero__body">
-    <div class="hero__intro">
-      <h1 class="hero__headline">{{ hero.title }}</h1>
-      <p class="hero__mission">{{ hero.mission }}</p>
+<div class="index-main">
+  <section class="section section--slab hero hero--dashboard">
+    <div class="container hero__body">
+      <div class="hero__intro copy">
+        <h1 class="hero__headline">{{ hero.title }}</h1>
+        <p class="hero__mission">{{ hero.mission }}</p>
+      </div>
+      <figure class="hero__media media--hero">
+        <img src="{{ hero.media.src }}" alt="{{ hero.media.alt }}" loading="lazy" width="1280" height="720">
+      </figure>
     </div>
-    <figure class="hero__media">
-      <img src="{{ hero.media.src }}" alt="{{ hero.media.alt }}" loading="lazy" width="1280" height="720">
-    </figure>
-  </div>
-</section>
+  </section>
 
-<section id="home-opportunity" class="section section--base home-opportunity">
-  <div class="container home-opportunity__body">
-    <figure class="home-opportunity__media">
-      <img src="{{ opportunity.image.src }}" alt="{{ opportunity.image.alt }}" loading="lazy" width="960" height="640">
-    </figure>
-    <div class="home-opportunity__content">
-      <p class="eyebrow">Current Opportunity</p>
-      <h2 class="home-section__title">Amora, Seixal · 19-hectare Waterfront Estate</h2>
-      <p>{{ opportunity.summary }}</p>
-      <div class="land-overview__chips land-overview__chips--left" role="list">
-        {% for metric in opportunity.metrics %}
-        <span role="listitem">{{ metric }}</span>
+  <section id="home-opportunity" class="section section--base home-opportunity">
+    <div class="container home-opportunity__body">
+      <figure class="home-opportunity__media">
+        <img src="{{ opportunity.image.src }}" alt="{{ opportunity.image.alt }}" loading="lazy" width="960" height="640">
+      </figure>
+      <div class="home-opportunity__content copy">
+        <p class="eyebrow">Current Opportunity</p>
+        <h2 class="home-section__title">Amora, Seixal Waterfront Estate</h2>
+        <p>{{ opportunity.summary }}</p>
+        <div class="land-overview__chips land-overview__chips--left" role="list">
+          {% for metric in opportunity.metrics %}
+          <span role="listitem">{{ metric }}</span>
+          {% endfor %}
+        </div>
+        <div class="home-opportunity__actions">
+          <a class="btn btn-primary" href="/land-opportunity/">Explore Current Opportunity</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="home-market" class="section section--slab home-market">
+    <div class="container home-market__body">
+      <h2 class="section-heading">{{ market.heading }}</h2>
+      <div class="home-market__grid">
+        <figure class="home-market__visual map-card">
+          <img src="{{ market.visual.src }}" alt="{{ market.visual.alt }}" loading="lazy" width="960" height="640">
+        </figure>
+        <article class="home-market__content copy">
+          <p>{{ market.summary }}</p>
+          <a class="inline-link" href="{{ market.cta.url }}">{{ market.cta.label }}</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="home-approach" class="section section--base home-approach">
+    <div class="container">
+      <h2 class="section-heading">{{ approach.heading }}</h2>
+      <div class="overview-grid overview-grid--simple">
+        {% for item in approach.items %}
+        <article class="overview-card overview-card--simple approach-card">
+          <span class="overview-card__icon">{{ item.icon }}</span>
+          <h3 class="overview-card__title">{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+        </article>
         {% endfor %}
       </div>
-      <div class="home-opportunity__actions">
-        <a class="btn btn-primary" href="/land-opportunity/">Explore Current Opportunity</a>
+    </div>
+  </section>
+
+  <section id="home-team" class="section section--slab team-preview">
+    <div class="container team-preview__container">
+      <h2 class="section-heading">{{ team.heading }}</h2>
+      <div class="team-preview__grid leadership-cards">
+        {% for person in team.members %}
+        <article class="team-preview__card leader-card">
+          <figure class="team-preview__media">
+            <img src="{{ person.image }}" alt="{{ person.alt }}" loading="lazy" width="320" height="400">
+          </figure>
+          <h3 class="team-preview__name">{{ person.name }}</h3>
+          <p class="team-preview__role">{{ person.role }}</p>
+        </article>
+        {% endfor %}
+      </div>
+      <div class="team-preview__cta">
+        <a class="btn btn-primary" href="/about/">Meet the Full Team</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="home-market" class="section section--slab home-market">
-  <div class="container home-market__body">
-    <h2 class="section-heading">{{ market.heading }}</h2>
-    <div class="home-market__grid">
-      <figure class="home-market__visual map-card">
-        <img src="{{ market.visual.src }}" alt="{{ market.visual.alt }}" loading="lazy" width="960" height="640">
-      </figure>
-      <article class="home-market__content">
-        <p>{{ market.summary }}</p>
-        <a class="inline-link" href="{{ market.cta.url }}">{{ market.cta.label }}</a>
-      </article>
+  <section class="section section--base home-footer-preface">
+    <div class="container">
+      <p class="muted note">Prefer a briefing? <a class="inline-link" href="/contact/">Contact Investor Relations</a>.</p>
+      <div class="home-tagline">
+        <p>Amora Vida — Building the future of real estate, one landmark at a time.</p>
+      </div>
     </div>
-  </div>
-</section>
-
-<section id="home-approach" class="section section--base home-approach">
-  <div class="container">
-    <h2 class="section-heading">{{ approach.heading }}</h2>
-    <div class="overview-grid overview-grid--simple">
-      {% for item in approach.items %}
-      <article class="overview-card overview-card--simple approach-card">
-        <span class="overview-card__icon">{{ item.icon }}</span>
-        <h3 class="overview-card__title">{{ item.title }}</h3>
-        <p>{{ item.text }}</p>
-      </article>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section id="home-team" class="section section--slab team-preview">
-  <div class="container team-preview__container">
-    <h2 class="section-heading">Meet the Team</h2>
-    <div class="team-preview__grid leadership-cards">
-      {% for person in team.members %}
-      <article class="team-preview__card leader-card">
-        <figure class="team-preview__media">
-          <img src="{{ person.image }}" alt="{{ person.alt }}" loading="lazy" width="320" height="400">
-        </figure>
-        <h3 class="team-preview__name">{{ person.name }}</h3>
-        <p class="team-preview__role">{{ person.role }}</p>
-      </article>
-      {% endfor %}
-    </div>
-    <div class="team-preview__cta">
-      <a class="btn btn-primary" href="/about/">Meet the Full Team</a>
-    </div>
-  </div>
-</section>
-
-<p class="muted note">Prefer a briefing? <a class="inline-link" href="/contact/">Contact Investor Relations</a>.</p>
-
-<div class="footer-divider" aria-hidden="true"></div>
-
-<section class="home-tagline">
-  <p>Amora Vida — Building the future of Portuguese real estate, one landmark at a time.</p>
-</section>
+  </section>
+</div>

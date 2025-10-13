@@ -1,33 +1,20 @@
 /* Overview index page */
-:root {
-  --slab-0: #ffffff;
-  --slab-1: #f7f9fb;
-  --stroke-100: #e7eef5;
-  --shadow-ambient: 0 16px 44px -28px rgba(20, 40, 70, 0.14);
+.copy {
+  max-width: 60ch;
 }
 
-.section {
-  padding-block: clamp(80px, 12vh, 120px);
+.section .text {
+  max-width: 60ch;
 }
 
-.section--base {
-  background: var(--slab-0);
-}
-
-.section--slab {
-  background: var(--slab-1);
-}
-
-.footer-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(20, 40, 70, 0.14), transparent);
-  margin: clamp(60px, 10vh, 96px) auto 0;
-  max-width: var(--container-width, 1140px);
+.media--hero {
+  max-height: 72vh;
 }
 
 .hero {
   position: relative;
   padding: clamp(72px, 14vh, 120px) 0 clamp(48px, 12vh, 88px);
+  background: var(--slab-1);
   overflow: hidden;
 }
 
@@ -35,7 +22,8 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(1200px 800px at 20% 24%, rgba(13, 33, 58, 0.08), transparent 70%);
+  background:
+    radial-gradient(1100px 700px at 24% 28%, rgba(13, 33, 58, 0.06), transparent 70%);
   pointer-events: none;
 }
 
@@ -45,36 +33,37 @@
   display: grid;
   gap: clamp(34px, 6vw, 52px);
   align-items: center;
-  min-height: clamp(520px, 70vh, 720px);
+  min-height: clamp(460px, 64vh, 620px);
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .hero__intro {
   display: grid;
   gap: 22px;
-  max-width: min(560px, 90vw);
+  max-width: 60ch;
 }
 
 .hero__headline {
   margin: 0;
-  font-size: clamp(2rem, 5vw, 2.8rem);
-  letter-spacing: -0.01em;
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
   color: #0d213a;
 }
 
 .hero__mission {
   margin: 0;
-  font-size: clamp(1.04rem, 2.6vw, 1.22rem);
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
   color: #233b54;
-  line-height: 1.6;
+  line-height: var(--lh-body);
 }
 
 .hero__media {
   position: relative;
-  border-radius: 32px;
+  border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(35, 48, 84, 0.14);
-  box-shadow: 0 28px 60px -36px rgba(19, 32, 60, 0.22);
+  border: 1px solid var(--stroke-100);
+  box-shadow: var(--shadow-ambient);
+  background: #ffffff;
   max-width: min(520px, 90vw);
   justify-self: center;
 }
@@ -93,6 +82,28 @@
   height: 100%;
   object-fit: cover;
   filter: brightness(1.2) saturate(1.06);
+}
+
+.index-main {
+  position: relative;
+}
+
+.index-main::after {
+  content: '';
+  position: fixed;
+  inset-inline: 0;
+  inset-block-end: 0;
+  height: 18vh;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(5, 10, 20, 0.04));
+}
+
+.card,
+.map-card {
+  background: #ffffff;
+  border: 1px solid var(--stroke-100);
+  border-radius: 14px;
+  box-shadow: var(--shadow-ambient);
 }
 
 /* Overview cards */
@@ -345,22 +356,18 @@
 }
 
 .map-card {
-  background: #ffffff;
-  border: 1px solid var(--stroke-100);
-  border-radius: 14px;
-  box-shadow: var(--shadow-ambient);
   overflow: hidden;
 }
 
 .muted.note {
   color: #5a6f86;
   text-align: center;
-  margin: clamp(36px, 6vh, 48px) auto 0;
+  margin: 0 auto clamp(16px, 4vh, 36px);
   font-size: 0.95rem;
 }
 
 .home-tagline {
-  padding: clamp(20px, 4vw, 36px) 0;
+  margin: 0 auto;
   text-align: center;
   color: #5a6f86;
   letter-spacing: 0.18em;
@@ -368,15 +375,25 @@
   font-size: 0.78rem;
 }
 
-@media (max-width: 980px) {
-  .hero__headline {
-    font-size: clamp(1.8rem, 6vw, 2.4rem);
+@media (max-width: 720px) {
+  .hero {
+    padding: clamp(56px, 18vh, 96px) 0;
   }
 }
 
-@media (max-width: 720px) {
-  .hero {
-    padding: clamp(80px, 20vh, 128px) 0;
+@media (max-width: 800px) {
+  .hero::before {
+    background:
+      radial-gradient(90vw 58vh at 16% 18%, rgba(13, 33, 58, 0.06), transparent 70%);
+  }
+
+  .card,
+  .map-card {
+    border-radius: 12px;
+  }
+
+  .index-main .section {
+    padding-block: clamp(64px, 11vh, 92px);
   }
 }
 
@@ -414,16 +431,13 @@ p, li, .body-text {
   color: #5a6f86 !important;
 }
 .eyebrow {
-  font-size: 0.78rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: #5a6f86;
-  margin: 0 0 6px 0;
+  margin: 0 0 8px 0;
 }
 
 .home-section__title {
   margin: 0 0 12px 0;
-  font-size: clamp(1.6rem, 3.2vw, 2rem);
-  letter-spacing: -0.01em;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-tight);
   color: #0d213a;
 }
