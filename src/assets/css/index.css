@@ -45,16 +45,31 @@
 
 .hero__headline {
   margin: 0;
-  font-size: var(--fs-h1);
-  line-height: var(--lh-tight);
-  color: #0d213a;
+  font-size: clamp(2.3rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  color: #0c1a32;
+  font-weight: 600;
+  letter-spacing: -0.018em;
 }
 
 .hero__mission {
   margin: 0;
-  font-size: clamp(1rem, 2.2vw, 1.15rem);
-  color: #233b54;
-  line-height: var(--lh-body);
+  font-size: clamp(1.08rem, 2.4vw, 1.26rem);
+  color: #203247;
+  line-height: 1.68;
+  max-width: 54ch;
+  position: relative;
+  padding-left: clamp(14px, 1.6vw, 20px);
+}
+
+.hero__mission::before {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 3px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(18, 137, 160, 0.48), rgba(13, 60, 90, 0.32));
 }
 
 .hero__media {
@@ -200,6 +215,12 @@
   text-align: left;
 }
 
+.home-opportunity .eyebrow {
+  font-size: clamp(0.9rem, 2.1vw, 1rem);
+  letter-spacing: 0.18em;
+  color: rgba(13, 33, 58, 0.92);
+}
+
 .home-opportunity__actions {
   display: flex;
   flex-direction: column;
@@ -226,6 +247,13 @@
 .home-market__body {
   display: grid;
   gap: clamp(20px, 3vw, 28px);
+}
+
+.index-main .section-heading {
+  font-size: clamp(1rem, 2.4vw, 1.22rem);
+  letter-spacing: 0.16em;
+  color: rgba(13, 33, 58, 0.96);
+  margin-bottom: 18px;
 }
 
 .home-market__grid {
