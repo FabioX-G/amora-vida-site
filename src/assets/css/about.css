@@ -7,12 +7,12 @@
 }
 
 #about-hero {
-  background: var(--slab-1);
+  background: var(--surface-1);
   border-bottom: 1px solid var(--stroke-100);
 }
 
 #leadership {
-  background: var(--slab-0);
+  background: var(--surface-0);
 }
 
 #leadership::before {
@@ -20,11 +20,11 @@
 }
 
 #investors {
-  background: var(--slab-1);
+  background: var(--surface-1);
 }
 
 #recognition {
-  background: var(--slab-0);
+  background: var(--surface-0);
 }
 
 #about-hero::before,
@@ -45,7 +45,7 @@
 #recognition .section-heading {
   font-size: clamp(1.12rem, 2.6vw, 1.4rem);
   letter-spacing: 0.12em;
-  color: #0d213a;
+  color: var(--ink-900);
   opacity: 0.92;
   margin: 0 0 14px 0;
 }
@@ -59,22 +59,9 @@
   width: 36px;
   height: 2px;
   border-radius: 2px;
-  background: #e5edf4;
+  background: var(--stroke-100);
   margin-inline-end: 10px;
   vertical-align: middle;
-}
-
-#leadership p,
-#leadership li {
-  font-size: clamp(15px, 1.6vw, 16px);
-  line-height: 1.58;
-}
-
-#leadership .team-member__content,
-#leadership .team-member__content p,
-#leadership .team-member__bio {
-  column-count: 1 !important;
-  column-gap: 0 !important;
 }
 
 #about-hero .lead-paragraph,
@@ -86,7 +73,7 @@
   margin-inline: auto;
   line-height: 1.6;
   font-size: clamp(15px, 1.6vw, 16px);
-  color: var(--color-text);
+  color: var(--ink-700);
   text-align: center;
 }
 
@@ -117,73 +104,42 @@
 .team-member {
   position: relative;
   display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  gap: clamp(12px, 2.2vw, 16px);
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: clamp(12px, 2vw, 16px);
   align-items: center;
-  background: var(--color-surface);
+  background: var(--surface-0);
   border-radius: 14px;
-  border: 1px solid rgba(35, 48, 84, 0.12);
-  box-shadow: 0 8px 22px -14px rgba(20, 40, 70, 0.12);
+  border: 1px solid var(--stroke-100);
+  box-shadow: var(--shadow-ambient);
   overflow: hidden;
-  padding: clamp(12px, 2.2vw, 16px);
+  padding: clamp(12px, 2vw, 16px);
+  min-height: 280px;
 }
 
-.team-member::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  background: linear-gradient(140deg, rgba(47, 168, 160, 0.12), transparent 74%);
-  opacity: 0;
-  transition: opacity 220ms ease;
+.team-member::before,
+.team-member::after,
+.team-member__media::after {
+  content: none !important;
+  background: none !important;
+  box-shadow: none !important;
 }
 
-.team-member::after {
-  content: "";
-  position: absolute;
-  inset-inline-start: clamp(14px, 2vw, 24px);
-  inset-block: clamp(18px, 3vw, 32px);
-  width: 2px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, rgba(47, 168, 160, 0.45), rgba(108, 142, 186, 0.32));
-  box-shadow: 0 0 14px rgba(47, 168, 160, 0.24);
-  pointer-events: none;
-}
-
-.team-member:hover::before,
-.team-member:focus-within::before {
-  opacity: 0.5;
+.team-member:focus-within {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
 }
 
 .team-member__media {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
-  background: var(--color-surface-muted);
+  background: var(--surface-1);
   box-shadow: 0 12px 24px -16px rgba(20, 40, 70, 0.12);
-  width: 220px;
-  max-width: 220px;
+  width: 200px;
+  max-width: 200px;
   aspect-ratio: 3 / 4;
   justify-self: center;
 }
-
-.team-member__media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(160deg, rgba(78, 208, 195, 0.16), rgba(108, 142, 186, 0.16));
-  mix-blend-mode: multiply;
-  opacity: 0;
-  transition: opacity 220ms ease;
-}
-
-.team-member:hover .team-member__media::after,
-.team-member:focus-within .team-member__media::after {
-  opacity: 0.65;
-}
-
 .team-member__media img {
   width: 100%;
   height: 100%;
@@ -196,33 +152,34 @@
 .team-member__content {
   display: grid;
   gap: clamp(8px, 2vw, 12px);
-  padding-inline-start: clamp(10px, 1.8vw, 16px);
+  padding-inline-start: clamp(8px, 1.6vw, 14px);
   align-content: flex-start;
-  max-width: 70ch;
+  max-width: 72ch;
 }
 
 .team-member__role {
-  margin: 0;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
+  margin: 0 0 2px 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(58, 72, 104, 0.7);
+  color: var(--brand-strong);
+  opacity: 0.98;
 }
 
 .team-member__name {
   margin: 0;
-  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-size: clamp(1.28rem, 2.4vw, 1.55rem);
   font-weight: 600;
   letter-spacing: 0.01em;
-  color: var(--color-heading);
+  color: var(--ink-900);
 }
 
 .team-member__bio {
   margin: 0;
   font-size: 1rem;
   line-height: 1.58;
-  color: var(--color-text);
-  max-width: 70ch;
+  color: var(--ink-700);
+  max-width: 72ch;
 }
 
 .team-member__bio + .team-member__bio {
@@ -230,7 +187,7 @@
 }
 
 .team-member__email {
-  margin: clamp(8px, 1.6vw, 12px) 0 0;
+  margin: clamp(8px, 1.2vw, 12px) 0 0;
   font-size: 0.98rem;
   color: rgba(58, 72, 104, 0.76);
 }
@@ -241,7 +198,7 @@
   }
 
   .team-member__content {
-    max-width: 72ch;
+    max-width: 74ch;
   }
 }
 
@@ -263,6 +220,7 @@
     grid-template-columns: 1fr;
     padding: clamp(14px, 6vw, 20px);
     border-radius: 18px;
+    min-height: auto;
   }
 
   .team-member__media {
@@ -275,15 +233,6 @@
     padding-inline-start: 0;
     gap: clamp(12px, 4.8vw, 18px);
     max-width: 100%;
-  }
-
-  .team-member::after {
-    inset-inline-start: clamp(18px, 6vw, 24px);
-    inset-block-start: clamp(18px, 6vw, 24px);
-    inset-block-end: auto;
-    width: clamp(120px, 30vw, 160px);
-    height: 2px;
-    background: linear-gradient(90deg, rgba(47, 168, 160, 0.4), rgba(108, 142, 186, 0.28));
   }
 
   .team-member__name {
@@ -299,6 +248,11 @@
   .team-member__email {
     font-size: 0.95rem;
     word-break: break-word;
+  }
+
+  .team-member__role {
+    font-size: 0.78rem;
+    letter-spacing: 0.09em;
   }
 
   .team-list {
@@ -321,7 +275,7 @@
   }
 
   .team-member__role {
-    font-size: 0.68rem;
+    font-size: 0.72rem;
     letter-spacing: 0.08em;
   }
 
@@ -336,5 +290,13 @@
   #leadership .section-heading {
     font-size: 0.92rem;
     letter-spacing: 0.08em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .team-member,
+  .team-member__media,
+  .team-member__content {
+    transition: none !important;
   }
 }

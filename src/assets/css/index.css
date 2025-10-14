@@ -14,7 +14,7 @@
 .hero {
   position: relative;
   padding: clamp(72px, 14vh, 120px) 0 clamp(48px, 12vh, 88px);
-  background: var(--slab-1);
+  background: var(--surface-1);
   overflow: hidden;
 }
 
@@ -47,7 +47,7 @@
   margin: 0;
   font-size: clamp(2.3rem, 5vw, 3.2rem);
   line-height: 1.1;
-  color: #0c1a32;
+  color: var(--ink-900);
   font-weight: 600;
   letter-spacing: -0.018em;
 }
@@ -55,7 +55,7 @@
 .hero__mission {
   margin: 0;
   font-size: clamp(1.08rem, 2.4vw, 1.26rem);
-  color: #203247;
+  color: var(--ink-700);
   line-height: 1.68;
   max-width: 54ch;
   position: relative;
@@ -69,7 +69,7 @@
   inset-inline-start: 0;
   width: 3px;
   border-radius: 999px;
-  background: linear-gradient(180deg, rgba(18, 137, 160, 0.48), rgba(13, 60, 90, 0.32));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--brand) 70%, transparent 30%), transparent);
 }
 
 .hero__media {
@@ -78,7 +78,7 @@
   overflow: hidden;
   border: 1px solid var(--stroke-100);
   box-shadow: var(--shadow-ambient);
-  background: #ffffff;
+  background: var(--surface-0);
   max-width: min(520px, 90vw);
   justify-self: center;
 }
@@ -113,9 +113,10 @@
   background: linear-gradient(180deg, transparent, rgba(5, 10, 20, 0.04));
 }
 
+
 .card,
 .map-card {
-  background: #ffffff;
+  background: var(--surface-0);
   border: 1px solid var(--stroke-100);
   border-radius: 14px;
   box-shadow: var(--shadow-ambient);
@@ -131,9 +132,9 @@
 .overview-card,
 .home-opportunity__media,
 .team-preview__card {
-  background: #ffffff;
+  background: var(--surface-0);
   border: 1px solid var(--stroke-100);
-  box-shadow: 0 10px 30px -15px rgba(20, 40, 70, 0.1);
+  box-shadow: var(--shadow-ambient);
 }
 
 .overview-card {
@@ -142,34 +143,34 @@
   gap: 16px;
   padding: clamp(20px, 3vw, 28px);
   border-radius: 26px;
-  color: #233b54;
+  color: var(--ink-700);
 }
 
 .overview-card--brand,
 .overview-card--simple {
-  background: #ffffff;
+  background: var(--surface-0);
   border: 1px solid var(--stroke-100);
-  box-shadow: 0 10px 30px -15px rgba(20, 40, 70, 0.1);
+  box-shadow: var(--shadow-ambient);
 }
 
 .overview-card__title {
   margin: 0;
   font-size: clamp(1.32rem, 3vw, 1.6rem);
   letter-spacing: -0.01em;
-  color: #0d213a;
+  color: var(--ink-900);
 }
 
 .overview-card__subtitle {
   margin: 0;
   font-size: 1.1rem;
-  color: #0d213a;
+  color: var(--ink-900);
 }
 
 .overview-card__eyebrow {
-  font-size: 0.72rem;
-  letter-spacing: 0.28em;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #5a6f86;
+  color: var(--ink-500);
 }
 
 .overview-card__list {
@@ -177,11 +178,11 @@
   padding-left: 1.1rem;
   display: grid;
   gap: 10px;
-  color: #233b54;
+  color: var(--ink-700);
 }
 
 .overview-card__list li::marker {
-  color: rgba(78, 208, 195, 0.58);
+  color: var(--accent);
 }
 
 .overview-card__icon {
@@ -210,7 +211,7 @@
 .home-opportunity__content {
   display: grid;
   gap: clamp(18px, 3vw, 26px);
-  color: #233b54;
+  color: var(--ink-700);
   align-content: start;
   text-align: left;
 }
@@ -218,13 +219,13 @@
 .home-opportunity__content > p {
   font-size: clamp(1.02rem, 2vw, 1.15rem);
   line-height: 1.68;
-  color: #1f2d42;
+  color: var(--ink-700);
 }
 
 .home-opportunity .eyebrow {
   font-size: clamp(0.9rem, 2.1vw, 1rem);
   letter-spacing: 0.18em;
-  color: rgba(13, 33, 58, 0.92);
+  color: var(--ink-500);
 }
 
 .home-opportunity__actions {
@@ -284,7 +285,7 @@
   display: grid;
   gap: clamp(18px, 2.6vw, 24px);
   max-width: 56ch;
-  color: #17243a;
+  color: var(--ink-700);
 }
 
 .home-market__content > p {
@@ -293,7 +294,7 @@
 }
 
 .home-market__content > p:first-of-type {
-  border-left: 3px solid rgba(18, 137, 160, 0.32);
+  border-left: 3px solid color-mix(in srgb, var(--brand) 50%, transparent 50%);
   padding-left: clamp(14px, 1.6vw, 18px);
 }
 
@@ -302,9 +303,9 @@
 }
 
 .approach-card {
-  background: #ffffff;
+  background: var(--surface-0);
   border: 1px solid var(--stroke-100);
-  box-shadow: 0 12px 30px -18px rgba(20, 40, 70, 0.12);
+  box-shadow: var(--shadow-ambient);
   border-radius: 14px;
   padding: clamp(18px, 2.6vw, 24px);
 }
@@ -365,13 +366,13 @@
 .team-preview__name {
   margin: 0;
   font-size: 1.1rem;
-  color: #0d213a;
+  color: var(--ink-900);
 }
 
 .team-preview__role {
   margin: 0;
   font-size: 0.95rem;
-  color: #5a6f86;
+  color: var(--ink-500);
 }
 
 .leadership-cards {
@@ -383,20 +384,8 @@
 .leader-card {
   border: 1px solid var(--stroke-100);
   border-radius: 14px;
-  background: #ffffff;
-  box-shadow: 0 12px 30px -18px rgba(20, 40, 70, 0.12);
-}
-
-.inline-link {
-  color: #0a8da5;
-  border-bottom: 1px solid #bfe6ed;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.inline-link:hover,
-.inline-link:focus-visible {
-  border-bottom-color: #0a8da5;
+  background: var(--surface-0);
+  box-shadow: var(--shadow-ambient);
 }
 
 .map-card {
@@ -404,7 +393,7 @@
 }
 
 .muted.note {
-  color: #5a6f86;
+  color: var(--ink-500);
   text-align: center;
   margin: 0 auto clamp(16px, 4vh, 36px);
   font-size: 0.95rem;
@@ -413,7 +402,7 @@
 .home-tagline {
   margin: 0 auto;
   text-align: center;
-  color: #5a6f86;
+  color: var(--ink-500);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-size: 0.78rem;
@@ -439,49 +428,4 @@
   .index-main .section {
     padding-block: clamp(64px, 11vh, 92px);
   }
-}
-
-/* --- Buttons --- */
-.btn-primary {
-  background: linear-gradient(118deg, #13b5c7, #0a93b0);
-  color: #03222a;
-  border: none;
-  border-radius: 9999px;
-  padding: 12px 18px;
-  transition: transform 0.18s ease, filter 0.18s ease;
-}
-
-.btn-primary:hover,
-.btn-primary:focus-visible {
-  transform: translateY(-2px);
-  filter: brightness(1.06);
-}
-
-/* --- Footer --- */
-footer {
-  background: linear-gradient(180deg, #f1f5f8, #e8eff4);
-  color: #233b54;
-  border-top: 1px solid #d5e0e8;
-}
-
-/* --- General typography for headings/body/muted --- */
-h1, h2, h3, h4, h5, h6 {
-  color: #0d213a;
-}
-p, li, .body-text {
-  color: #233b54;
-}
-.text-muted, .muted, .overview-card__eyebrow, .team-preview__role, .home-tagline {
-  color: #5a6f86 !important;
-}
-.eyebrow {
-  color: #5a6f86;
-  margin: 0 0 8px 0;
-}
-
-.home-section__title {
-  margin: 0 0 12px 0;
-  font-size: var(--fs-h2);
-  line-height: var(--lh-tight);
-  color: #0d213a;
 }

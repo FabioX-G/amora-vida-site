@@ -1,7 +1,7 @@
 /* Contact page */
 .contact-details {
-  background: #ffffff;
-  border-top: 1px solid #e2e8f0;
+  background: var(--surface-0);
+  border-top: 1px solid var(--stroke-100);
   padding: clamp(72px, 18vh, 120px) 0 clamp(48px, 14vh, 96px);
 }
 
@@ -14,18 +14,18 @@
 }
 
 .contact-title {
-  color: #0d213a;
+  color: var(--ink-900);
 }
 
 .contact-lead {
   margin: 0;
-  color: #233b54;
+  color: var(--ink-700);
   font-size: 1.05rem;
   line-height: 1.7;
 }
 
 .contact-subtitle {
-  color: #0d213a;
+  color: var(--ink-900);
 }
 
 .contact-list {
@@ -34,7 +34,7 @@
   list-style: none;
   display: grid;
   gap: 18px;
-  color: #233b54;
+  color: var(--ink-700);
 }
 
 .contact-list li {
@@ -46,19 +46,19 @@
   font-size: 0.82rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #5a6f86;
+  color: var(--ink-500);
 }
 
 .contact-list a {
-  color: #0a8da5;
+  color: var(--brand-strong);
   text-decoration: none;
-  border-bottom: 1px solid #b1e7ed;
+  border-bottom: 1px solid color-mix(in srgb, var(--brand) 60%, #fff 30%);
   width: fit-content;
 }
 
 .contact-list a:hover,
 .contact-list a:focus-visible {
-  border-bottom-color: #0a8da5;
+  border-bottom-color: var(--brand-strong);
 }
 
 @media (max-width: 640px) {

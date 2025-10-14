@@ -130,7 +130,7 @@
 
 /* Summary */
 .snapshot {
-  background: var(--slab-0);
+  background: var(--surface-0);
 }
 
 .snapshot__body {
@@ -144,7 +144,7 @@
 .value-path .section-heading {
   font-size: clamp(1rem, 2.4vw, 1.22rem);
   letter-spacing: 0.16em;
-  color: rgba(13, 33, 58, 0.96);
+  color: var(--ink-500);
   margin-bottom: 18px;
 }
 
@@ -159,7 +159,7 @@
 .snapshot__support {
   margin: 0 auto;
   text-align: center;
-  color: #233b54;
+  color: var(--ink-700);
   max-width: 60ch;
   line-height: var(--lh-body);
 }
@@ -190,7 +190,7 @@
 
 /* Connectivity */
 .connectivity {
-  background: var(--slab-1);
+  background: var(--surface-1);
 }
 
 .connectivity__body {
@@ -209,7 +209,7 @@
 .connectivity__copy {
   display: grid;
   gap: 16px;
-  color: #233b54;
+  color: var(--ink-700);
   max-width: 60ch;
 }
 
@@ -230,26 +230,26 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--stroke-100);
   border-radius: 9999px;
   padding: 6px 12px;
-  background: #ffffff;
-  color: #0d213a;
+  background: var(--surface-0);
+  color: var(--ink-900);
 }
 
 .connectivity__note {
   margin: 0;
   font-size: 0.88rem;
-  color: rgba(58, 72, 104, 0.7);
+  color: var(--ink-500);
   line-height: var(--lh-body);
 }
 
 .connectivity__map {
-  border: 1px solid rgba(32, 86, 120, 0.15);
+  border: 1px solid var(--stroke-100);
   border-radius: 14px;
-  box-shadow: 0 12px 36px -18px rgba(15, 45, 70, 0.12);
+  box-shadow: var(--shadow-ambient);
   overflow: hidden;
-  background: #ffffff;
+  background: var(--surface-0);
   transition: transform 220ms ease;
 }
 
@@ -269,13 +269,14 @@
 }
 
 .connectivity__map-link a {
-  color: #0a8da5;
+  color: var(--brand-strong);
   text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--brand) 60%, #fff 30%);
 }
 
 .connectivity__map-link a:hover,
 .connectivity__map-link a:focus-visible {
-  text-decoration: underline;
+  border-bottom-color: var(--brand-strong);
 }
 
 @media (max-width: 640px) {
@@ -285,7 +286,7 @@
 }
 
 .value-path {
-  background: var(--slab-0);
+  background: var(--surface-0);
 }
 
 .value-path__body {
@@ -301,10 +302,10 @@
 }
 
 .value-path__card {
-  background: linear-gradient(180deg, #ffffff, #f8fafc);
-  border: 1px solid #e2e8f0;
+  background: var(--surface-0);
+  border: 1px solid var(--stroke-100);
   border-radius: 16px;
-  box-shadow: 0 10px 24px -14px rgba(30, 60, 80, 0.08);
+  box-shadow: var(--shadow-ambient);
   padding: 16px 18px;
   display: grid;
   gap: 8px;
@@ -313,12 +314,12 @@
 .value-path__card h3 {
   margin: 0;
   font-size: 1.05rem;
-  color: #0d213a;
+  color: var(--ink-900);
 }
 
 .value-path__card p {
   margin: 0;
-  color: #233b54;
+  color: var(--ink-700);
   font-size: 0.95rem;
   line-height: 1.55;
 }
@@ -328,7 +329,7 @@
   align-items: center;
   gap: 16px;
   margin-top: 12px;
-  color: #5a6f86;
+  color: var(--ink-500);
   font-size: 0.82rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -337,14 +338,14 @@
 
 .value-path__label {
   font-size: 0.82rem;
-  color: #5a6f86;
+  color: var(--ink-500);
 }
 .dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #0aa2bd;
-  opacity: 0.8;
+  background: var(--brand);
+  opacity: 0.82;
 }
 
 .value-path__cta {
@@ -360,7 +361,7 @@
 }
 
 .land-strip {
-  background: var(--slab-1);
+  background: var(--surface-1);
 }
 
 .land-strip__body {
