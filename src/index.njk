@@ -6,7 +6,9 @@ styles:
 title: Amora Vida · Investor Overview
 description: "Understand Amora Vida’s thesis at a glance, then navigate to the detailed Land, Market, About, or Contact pages."
 hero:
-  title: "Invest in Lisbon’s next waterfront corridor."
+  title:
+    primary: "Inspired by Nature,"
+    secondary: "Built for Life."
   lead: "Amora Vida acquires, develops, and exits strategic land projects in Greater Lisbon."
   media:
     src: "/assets/images/LandScapeOverview1.jpg"
@@ -63,7 +65,10 @@ team:
   <section class="section section--slab hero hero--dashboard">
     <div class="container hero__body">
       <div class="hero__intro copy">
-        <h1 class="hero__headline">{{ hero.title }}</h1>
+        <h1 class="hero__headline">
+          <span class="hero__headline-line">{{ hero.title.primary }}</span>
+          <span class="hero__headline-line hero__headline-line--accent">{{ hero.title.secondary }}</span>
+        </h1>
         <p class="hero__lead">{{ hero.lead }}</p>
       </div>
       <figure class="hero__media media--hero">
