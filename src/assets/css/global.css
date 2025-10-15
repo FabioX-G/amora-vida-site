@@ -17,6 +17,7 @@
   --brand-strong: #0aa3b4;
   --accent: #26e0c1;
   --accent-2: #6fa3ff;
+  --link-teal: #0a8da5;
 
   --ink-900: #0d213a;
   --ink-700: #233b54;
@@ -160,6 +161,10 @@ img {
   height: auto;
 }
 
+img.is-primary-visual {
+  filter: brightness(1.04) saturate(1.06);
+}
+
 /* Typography */
 h1,
 h2,
@@ -259,7 +264,7 @@ strong {
   gap: 10px;
   margin: 0 0 18px 0;
   font-size: clamp(0.78rem, 1.8vw, 0.96rem);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--ink-500);
@@ -281,7 +286,7 @@ strong {
 .label,
 .eyebrow {
   font-size: 0.78rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-500);
 }
@@ -302,16 +307,16 @@ strong {
 }
 
 .inline-link {
-  color: var(--brand-strong);
+  color: var(--link-teal);
   text-decoration: none;
-  border-bottom: 1px solid color-mix(in srgb, var(--brand) 60%, #fff 40%);
+  border-bottom: 1px solid color-mix(in srgb, var(--link-teal) 60%, #fff 40%);
   transition: border-color 0.2s ease, color 0.2s ease;
 }
 
 .inline-link:hover,
 .inline-link:focus-visible {
-  border-bottom-color: var(--brand-strong);
-  color: var(--brand-strong);
+  border-bottom-color: var(--link-teal);
+  color: var(--link-teal);
 }
 .section-title + .prose,
 .section-title + ul {

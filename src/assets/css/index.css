@@ -45,16 +45,16 @@
 
 .hero__headline {
   margin: 0;
-  font-size: clamp(2.3rem, 5vw, 3.2rem);
-  line-height: 1.1;
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
   color: var(--ink-900);
   font-weight: 600;
   letter-spacing: -0.018em;
 }
 
-.hero__mission {
+.hero__lead {
   margin: 0;
-  font-size: clamp(1.08rem, 2.4vw, 1.26rem);
+  font-size: clamp(1.02rem, 2.2vw, 1.18rem);
   color: var(--ink-700);
   line-height: 1.68;
   max-width: 54ch;
@@ -62,7 +62,7 @@
   padding-left: clamp(14px, 1.6vw, 20px);
 }
 
-.hero__mission::before {
+.hero__lead::before {
   content: '';
   position: absolute;
   inset-block: 0;
@@ -74,12 +74,13 @@
 
 .hero__media {
   position: relative;
-  border-radius: 16px;
+  border-radius: 14px;
   overflow: hidden;
   border: 1px solid var(--stroke-100);
   box-shadow: var(--shadow-ambient);
   background: var(--surface-0);
-  max-width: min(520px, 90vw);
+  max-width: min(560px, 92vw);
+  aspect-ratio: 16 / 9;
   justify-self: center;
 }
 
@@ -96,7 +97,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(1.2) saturate(1.06);
 }
 
 .index-main {
@@ -198,8 +198,10 @@
 
 .home-opportunity__media {
   margin: 0;
-  border-radius: 32px;
+  border-radius: 14px;
   overflow: hidden;
+  display: grid;
+  aspect-ratio: 16 / 9;
 }
 
 .home-opportunity__media img {
@@ -223,8 +225,8 @@
 }
 
 .home-opportunity .eyebrow {
-  font-size: clamp(0.9rem, 2.1vw, 1rem);
-  letter-spacing: 0.18em;
+  font-size: clamp(1rem, 2.4vw, 1.22rem);
+  letter-spacing: 0.1em;
   color: var(--ink-500);
 }
 
@@ -235,20 +237,8 @@
   align-items: flex-start;
 }
 
-@media (min-width: 768px) {
-  .home-opportunity__actions {
-    align-items: flex-end;
-  }
-}
-
 .home-opportunity__actions .inline-link {
   align-self: flex-start;
-}
-
-@media (min-width: 768px) {
-  .home-opportunity__actions .inline-link {
-    align-self: flex-end;
-  }
 }
 
 .home-market__body {
@@ -258,8 +248,8 @@
 
 .index-main .section-heading {
   font-size: clamp(1rem, 2.4vw, 1.22rem);
-  letter-spacing: 0.16em;
-  color: rgba(13, 33, 58, 0.96);
+  letter-spacing: 0.1em;
+  color: var(--ink-500);
   margin-bottom: 18px;
 }
 
@@ -273,6 +263,7 @@
 
 .home-market__visual {
   margin: 0;
+  aspect-ratio: 16 / 9;
 }
 
 .home-market__visual img {
@@ -403,7 +394,7 @@
   margin: 0 auto;
   text-align: center;
   color: var(--ink-500);
-  letter-spacing: 0.18em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   font-size: 0.78rem;
 }

@@ -44,21 +44,21 @@
 
 .contact-list span {
   font-size: 0.82rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-500);
 }
 
 .contact-list a {
-  color: var(--brand-strong);
+  color: var(--link-teal);
   text-decoration: none;
-  border-bottom: 1px solid color-mix(in srgb, var(--brand) 60%, #fff 30%);
+  border-bottom: 1px solid color-mix(in srgb, var(--link-teal) 60%, #fff 30%);
   width: fit-content;
 }
 
 .contact-list a:hover,
 .contact-list a:focus-visible {
-  border-bottom-color: var(--brand-strong);
+  border-bottom-color: var(--link-teal);
 }
 
 @media (max-width: 640px) {

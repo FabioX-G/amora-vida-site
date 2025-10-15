@@ -6,8 +6,8 @@ styles:
 title: Amora Vida · Investor Overview
 description: "Understand Amora Vida’s thesis at a glance, then navigate to the detailed Land, Market, About, or Contact pages."
 hero:
-  title: "Amora Vida acquires, develops, and exits strategic land across Greater Lisbon."
-  mission: "We create long-term value through disciplined land acquisitions, entitlement strategy, and transparent investor partnerships."
+  title: "Invest in Lisbon’s next waterfront corridor."
+  lead: "Amora Vida acquires, develops, and exits strategic land projects in Greater Lisbon."
   media:
     src: "/assets/images/LandScapeOverview1.jpg"
     alt: "Panoramic view across Lisbon’s south bank waterfront"
@@ -64,10 +64,10 @@ team:
     <div class="container hero__body">
       <div class="hero__intro copy">
         <h1 class="hero__headline">{{ hero.title }}</h1>
-        <p class="hero__mission">{{ hero.mission }}</p>
+        <p class="hero__lead">{{ hero.lead }}</p>
       </div>
       <figure class="hero__media media--hero">
-        <img src="{{ hero.media.src }}" alt="{{ hero.media.alt }}" loading="lazy" width="1280" height="720">
+        <img class="is-primary-visual" src="{{ hero.media.src }}" alt="{{ hero.media.alt }}" loading="lazy" width="1280" height="720">
       </figure>
     </div>
   </section>
@@ -75,17 +75,12 @@ team:
   <section id="home-opportunity" class="section section--base home-opportunity">
     <div class="container home-opportunity__body">
       <figure class="home-opportunity__media">
-        <img src="{{ opportunity.image.src }}" alt="{{ opportunity.image.alt }}" loading="lazy" width="960" height="640">
+        <img class="is-primary-visual" src="{{ opportunity.image.src }}" alt="{{ opportunity.image.alt }}" loading="lazy" width="960" height="640">
       </figure>
       <div class="home-opportunity__content copy">
         <p class="eyebrow">Current Opportunity</p>
         <h2 class="home-section__title">Amora, Seixal Waterfront Estate</h2>
         <p>{{ opportunity.summary }}</p>
-        <div class="land-overview__chips land-overview__chips--left" role="list">
-          {% for metric in opportunity.metrics %}
-          <span role="listitem">{{ metric }}</span>
-          {% endfor %}
-        </div>
         <div class="home-opportunity__actions">
           <a class="btn btn-primary" href="/land-opportunity/">Explore Current Opportunity</a>
         </div>
@@ -98,7 +93,7 @@ team:
       <h2 class="section-heading">{{ market.heading }}</h2>
       <div class="home-market__grid">
         <figure class="home-market__visual map-card">
-          <img src="{{ market.visual.src }}" alt="{{ market.visual.alt }}" loading="lazy" width="960" height="640">
+          <img class="is-primary-visual" src="{{ market.visual.src }}" alt="{{ market.visual.alt }}" loading="lazy" width="960" height="640">
         </figure>
         <article class="home-market__content copy">
           <p>{{ market.summary }}</p>

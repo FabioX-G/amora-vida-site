@@ -39,64 +39,97 @@
   background: none !important;
 }
 
-#about-hero .section-heading,
-#leadership .section-heading,
-#investors .section-heading,
-#recognition .section-heading {
-  font-size: clamp(1.12rem, 2.6vw, 1.4rem);
-  letter-spacing: 0.12em;
+#about-hero .section-title,
+#leadership .section-title,
+#investors .section-title,
+#recognition .section-title {
+  margin: 0 0 18px 0;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-tight);
   color: var(--ink-900);
-  opacity: 0.92;
-  margin: 0 0 14px 0;
+  letter-spacing: -0.01em;
 }
 
-#about-hero .section-heading::before,
-#leadership .section-heading::before,
-#investors .section-heading::before,
-#recognition .section-heading::before {
+#about-hero .section-title {
+  position: relative;
+  padding-left: clamp(14px, 1.8vw, 20px);
+}
+
+#about-hero .section-title::before,
+#leadership .section-title::before,
+#investors .section-title::before,
+#recognition .section-title::before {
   content: "";
-  display: inline-block;
-  width: 36px;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--stroke-100);
-  margin-inline-end: 10px;
-  vertical-align: middle;
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 3px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brand) 70%, transparent 30%);
+}
+
+#leadership .section-title,
+#investors .section-title,
+#recognition .section-title {
+  position: relative;
+  padding-left: clamp(14px, 1.8vw, 20px);
 }
 
 #about-hero .lead-paragraph,
-#investors .lead-paragraph,
-#recognition .lead-paragraph,
 #investors p,
 #recognition p {
-  max-width: 60ch;
-  margin-inline: auto;
-  line-height: 1.6;
-  font-size: clamp(15px, 1.6vw, 16px);
+  max-width: 65ch;
+  margin: 0;
+  line-height: var(--lh-body);
+  font-size: var(--fs-body);
   color: var(--ink-700);
-  text-align: center;
+  text-align: left;
+  padding-inline-start: clamp(14px, 1.8vw, 20px);
 }
 
 #about-hero .container,
 #investors .container,
-#recognition .container {
-  max-width: 960px;
-  margin-inline: auto;
-  text-align: center;
-  display: grid;
-  gap: 24px;
-}
-
+#recognition .container,
 #leadership .container {
-  max-width: 1140px;
+  max-width: var(--container-width);
   margin-inline: auto;
   text-align: left;
+  display: grid;
+  gap: clamp(24px, 4vw, 32px);
+  justify-items: start;
+}
+
+.press-link {
+  font-size: 0.95rem;
+  color: var(--ink-700);
+  display: grid;
+  gap: 6px;
+  padding-inline-start: clamp(14px, 1.8vw, 20px);
+}
+
+.press-link a {
+  color: var(--link-teal);
+  border-bottom: 1px solid color-mix(in srgb, var(--link-teal) 60%, #fff 30%);
+  width: fit-content;
+}
+
+.press-link a:hover,
+.press-link a:focus-visible {
+  border-bottom-color: var(--link-teal);
+}
+
+.press-note {
+  font-size: 0.82rem;
+  color: var(--ink-500);
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .team-list {
   margin: clamp(36px, 6vw, 64px) 0 0;
   list-style: none;
   padding: 0;
+  padding-inline-start: clamp(14px, 1.8vw, 20px);
   display: grid;
   gap: clamp(28px, 4.5vw, 40px);
 }
@@ -135,9 +168,9 @@
   border-radius: 12px;
   background: var(--surface-1);
   box-shadow: 0 12px 24px -16px rgba(20, 40, 70, 0.12);
-  width: 200px;
-  max-width: 200px;
-  aspect-ratio: 3 / 4;
+  width: clamp(180px, 18vw, 220px);
+  max-width: 220px;
+  aspect-ratio: 4 / 5;
   justify-self: center;
 }
 .team-member__media img {
@@ -154,7 +187,7 @@
   gap: clamp(8px, 2vw, 12px);
   padding-inline-start: clamp(8px, 1.6vw, 14px);
   align-content: flex-start;
-  max-width: 72ch;
+  max-width: 65ch;
 }
 
 .team-member__role {
@@ -179,7 +212,7 @@
   font-size: 1rem;
   line-height: 1.58;
   color: var(--ink-700);
-  max-width: 72ch;
+  max-width: 65ch;
 }
 
 .team-member__bio + .team-member__bio {
