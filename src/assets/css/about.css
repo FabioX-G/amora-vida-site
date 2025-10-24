@@ -1,11 +1,12 @@
 :root {
   --about-section-max: clamp(320px, 86vw, 900px);
   --about-container-padding: clamp(20px, 6vw, 36px);
-  --about-accent-gap: clamp(16px, 2.8vw, 26px);
+  --about-accent-offset: clamp(18px, 2.8vw, 28px);
   --about-body-color: rgba(10, 20, 40, 0.82);
   --about-heading-color: #0e274b;
-  --about-heading-emphasis: #07203f;
+  --about-heading-strong: #07203f;
   --about-accent-gradient: linear-gradient(135deg, #1ac8ff 0%, #26e0c1 45%, #7189ff 100%);
+  --about-divider: rgba(20, 40, 70, 0.06);
 }
 
 #about-hero,
@@ -18,8 +19,14 @@
   background: linear-gradient(180deg, #f9fbfd 0%, #f4f7fa 100%);
 }
 
-#leadership::before {
-  content: none;
+#about-hero {
+  border-bottom: 1px solid var(--about-divider);
+}
+
+#leadership,
+#investors,
+#recognition {
+  border-top: 1px solid var(--about-divider);
 }
 
 #about-hero::before,
@@ -34,48 +41,29 @@
   background: none !important;
 }
 
-#leadership,
-#investors,
-#recognition {
-  border-top: 1px solid rgba(20, 40, 70, 0.06);
+#about-hero .container,
+#leadership .container,
+#investors .container,
+#recognition .container {
+  width: 100%;
+  max-width: var(--about-section-max);
+  margin-inline: auto;
+  padding-inline: var(--about-container-padding);
+  display: grid;
+  gap: clamp(32px, 5vw, 42px);
+  justify-items: flex-start;
+  text-align: left;
 }
 
 #about-hero .section-title,
 #leadership .section-title,
 #investors .section-title,
 #recognition .section-title {
-  position: relative;
-  margin: 0;
-  padding-inline-start: var(--about-accent-gap);
-  font-size: clamp(1.25rem, 2vw, 1.4rem);
-  line-height: 1.28;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: none;
   color: var(--about-heading-color);
 }
 
 #about-hero .section-title {
-  color: var(--about-heading-emphasis);
-}
-
-#about-hero .section-title::before,
-#leadership .section-title::before,
-#investors .section-title::before,
-#recognition .section-title::before {
-  content: "";
-  position: absolute;
-  inset-block: 0;
-  inset-inline-start: 0;
-  width: 4px;
-  border-radius: 999px;
-  background: var(--about-accent-gradient);
-}
-
-#leadership .section-title,
-#investors .section-title,
-#recognition .section-title {
-  color: var(--about-heading-color);
+  color: var(--about-heading-strong);
 }
 
 #about-hero .lead-paragraph,
@@ -83,81 +71,66 @@
 #recognition p {
   max-width: 72ch;
   margin: 0;
-  padding-inline-start: var(--about-accent-gap);
-  line-height: 1.68;
+  padding-inline-start: var(--about-accent-offset);
   font-size: var(--fs-body);
+  line-height: 1.68;
   color: var(--about-body-color);
   text-align: left;
-}
-
-#about-hero .container,
-#investors .container,
-#recognition .container,
-#leadership .container {
-  width: 100%;
-  max-width: var(--about-section-max);
-  margin-inline: auto;
-  padding-inline: var(--about-container-padding);
-  text-align: left;
-  display: grid;
-  gap: clamp(32px, 5vw, 40px);
-  justify-items: start;
 }
 
 #investors p + p,
 #recognition p + p {
-  margin-top: clamp(14px, 3vw, 20px);
+  margin-top: clamp(14px, 3vw, 22px);
 }
 
 .press-link {
-  font-size: 0.95rem;
-  color: var(--about-body-color);
   display: grid;
   gap: 6px;
-  padding-inline-start: var(--about-accent-gap);
+  padding-inline-start: var(--about-accent-offset);
+  font-size: 0.95rem;
+  color: var(--about-body-color);
 }
 
 .press-link a {
-  color: var(--about-heading-emphasis);
+  color: var(--about-heading-strong);
   border-bottom: 1px solid rgba(26, 200, 255, 0.45);
   width: fit-content;
+  text-decoration: none;
+  transition: border-color 0.18s ease;
 }
 
 .press-link a:hover,
 .press-link a:focus-visible {
-  border-bottom-color: var(--link-teal);
+  border-bottom-color: #0a8da5;
 }
 
 .press-note {
   font-size: 0.82rem;
   color: rgba(32, 52, 88, 0.62);
-  letter-spacing: 0;
-  text-transform: none;
 }
 
 .team-list {
   margin: clamp(36px, 6vw, 64px) 0 0;
-  list-style: none;
   padding: 0;
-  padding-inline-start: var(--about-accent-gap);
+  padding-inline-start: var(--about-accent-offset);
+  list-style: none;
   display: grid;
-  gap: clamp(32px, 5vw, 44px);
+  gap: clamp(32px, 5vw, 46px);
 }
 
 .team-member {
   position: relative;
   display: grid;
   grid-template-columns: 200px minmax(0, 1fr);
-  gap: clamp(12px, 2vw, 16px);
+  gap: clamp(14px, 2.2vw, 18px);
   align-items: center;
+  padding: clamp(16px, 2.6vw, 24px);
   background: var(--surface-0);
-  border-radius: 14px;
   border: 1px solid var(--stroke-100);
+  border-radius: 16px;
   box-shadow: var(--shadow-ambient);
   overflow: hidden;
-  padding: clamp(16px, 2.6vw, 24px);
   min-height: 280px;
-  width: 100%;
 }
 
 .team-member::before,
@@ -178,12 +151,13 @@
   overflow: hidden;
   border-radius: 12px;
   background: var(--surface-1);
-  box-shadow: 0 12px 24px -16px rgba(20, 40, 70, 0.12);
   width: clamp(180px, 18vw, 220px);
   max-width: 220px;
   aspect-ratio: 4 / 5;
   justify-self: center;
+  box-shadow: 0 12px 24px -16px rgba(20, 40, 70, 0.12);
 }
+
 .team-member__media img {
   width: 100%;
   height: 100%;
@@ -195,18 +169,18 @@
 
 .team-member__content {
   display: grid;
-  gap: clamp(12px, 2.4vw, 18px);
-  padding-inline-start: clamp(10px, 1.8vw, 16px);
+  gap: clamp(12px, 2.6vw, 18px);
+  padding-inline-start: clamp(10px, 1.8vw, 18px);
   align-content: flex-start;
   max-width: 72ch;
 }
 
 .team-member__role {
   margin: 0 0 2px 0;
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--about-heading-emphasis);
+  color: var(--about-heading-strong);
 }
 
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
@@ -226,6 +200,13 @@
   color: var(--ink-900);
 }
 
+.team-summary {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.68;
+  color: var(--about-body-color);
+}
+
 .team-member__bio {
   margin: 0;
   font-size: 1rem;
@@ -238,17 +219,23 @@
   margin-top: clamp(6px, 1vw, 10px);
 }
 
-.team-summary {
-  margin: 0;
-  font-size: 1.02rem;
-  line-height: 1.68;
-  color: var(--about-body-color);
-}
-
 .team-member__email {
-  margin: clamp(8px, 1.2vw, 12px) 0 0;
+  margin: clamp(10px, 1.6vw, 16px) 0 0;
   font-size: 0.98rem;
   color: rgba(58, 72, 104, 0.76);
+}
+
+.team-member__email a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(35, 48, 84, 0.22);
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+
+.team-member__email a:hover,
+.team-member__email a:focus-visible {
+  color: rgba(27, 35, 53, 0.92);
+  border-bottom-color: rgba(47, 168, 160, 0.45);
 }
 
 @media (min-width: 1280px) {
@@ -261,23 +248,10 @@
   }
 }
 
-.team-member__email a {
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px dashed rgba(35, 48, 84, 0.22);
-  transition: color 180ms ease, border-color 180ms ease;
-}
-
-.team-member__email a:hover,
-.team-member__email a:focus {
-  color: rgba(27, 35, 53, 0.92);
-  border-bottom-color: rgba(47, 168, 160, 0.45);
-}
-
 @media (max-width: 960px) {
   .team-member {
     grid-template-columns: 1fr;
-    padding: clamp(14px, 6vw, 20px);
+    padding: clamp(18px, 6vw, 24px);
     border-radius: 18px;
     min-height: auto;
   }
@@ -290,7 +264,7 @@
 
   .team-member__content {
     padding-inline-start: 0;
-    gap: clamp(12px, 4.8vw, 18px);
+    gap: clamp(12px, 4.6vw, 20px);
     max-width: 100%;
   }
 
@@ -301,7 +275,6 @@
   .team-member__bio {
     font-size: 0.98rem;
     line-height: 1.68;
-    max-width: 100%;
   }
 
   .team-member__email {
@@ -310,44 +283,26 @@
   }
 
   .team-member__role {
-    font-size: 0.78rem;
-    letter-spacing: 0.09em;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
   }
 
   .team-list {
-    gap: clamp(20px, 6vw, 28px);
+    gap: clamp(24px, 6vw, 36px);
   }
 }
 
 @media (max-width: 640px) {
-  .team-member__content {
-    padding-inline-start: 0;
-  }
-
-  .team-member__bio {
-    font-size: 0.95rem;
-    line-height: 1.68;
-  }
-
   .team-member {
-    padding: clamp(16px, 8vw, 26px);
-  }
-
-  .team-member__role {
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
+    padding: clamp(20px, 8vw, 28px);
   }
 
   .team-member__name {
-    font-size: clamp(1.22rem, 7vw, 1.45rem);
+    font-size: clamp(1.22rem, 7vw, 1.48rem);
   }
 
-  .team-member__media {
-    max-width: 280px;
-  }
-
-  #leadership .section-heading {
-    font-size: 0.92rem;
+  .team-member__role {
+    font-size: 0.7rem;
     letter-spacing: 0.08em;
   }
 }

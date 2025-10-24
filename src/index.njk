@@ -5,14 +5,6 @@ styles:
   - land.css
 title: Amora Vida · Investor Overview
 description: "Understand Amora Vida’s thesis at a glance, then navigate to the detailed Land, Market, About, or Contact pages."
-hero:
-  title:
-    primary: "Inspired by Nature,"
-    secondary: "Built for Life."
-  lead: "Amora Vida acquires, develops, and exits strategic land projects in Greater Lisbon."
-  media:
-    src: "/assets/images/LandScapeOverview1.jpg"
-    alt: "Panoramic view across Lisbon’s south bank waterfront"
 opportunity:
   heading: "Amora, Seixal Waterfront Estate"
   summary: "A scarce 19-hectare waterfront estate positioned for Lisbon’s south-bank growth cycle."
@@ -62,19 +54,18 @@ team:
       alt: "Portrait of Ana Karina Peixoto"
 ---
 <div class="index-main">
-  <section class="section section--slab hero hero--dashboard">
-    <div class="container hero__body">
-      <div class="hero__intro copy">
+  <section class="section section--slab hero hero--cinematic">
+    <div class="container hero__grid">
+      <div class="hero__copy">
         <h1 class="hero__headline">
-          <span class="hero__headline-line">{{ hero.title.primary }}</span>
-          <span class="hero__headline-line hero__headline-line--accent">{{ hero.title.secondary }}</span>
+          Inspired by Nature,<br class="hide-mobile"> <span class="hero__accent">Built for Life.</span>
         </h1>
-        <p class="hero__lead">{{ hero.lead }}</p>
+        <p class="hero__lead">
+          Amora Vida acquires, develops, and exits strategic land projects in Greater Lisbon.
+        </p>
       </div>
-      <figure class="hero__media media--hero">
-        <img class="is-primary-visual" src="{{ hero.media.src }}" alt="{{ hero.media.alt }}" loading="lazy" width="1280" height="720">
-      </figure>
     </div>
+    <span class="sr-only">Panoramic view of Amora–Seixal riverfront with greenery and water.</span>
   </section>
 
   <section id="home-opportunity" class="section section--base home-opportunity">
@@ -83,10 +74,10 @@ team:
         <img class="is-primary-visual" src="{{ opportunity.image.src }}" alt="{{ opportunity.image.alt }}" loading="lazy" width="960" height="640">
       </figure>
       <div class="home-opportunity__content copy">
-        <p class="eyebrow">Current Opportunity</p>
-        <h2 class="home-section__title">Amora, Seixal Waterfront Estate</h2>
-        <p>{{ opportunity.summary }}</p>
-        <div class="home-opportunity__actions">
+        <h2 class="section-heading">Current Opportunity</h2>
+        <h3 class="home-opportunity__title with-heading-offset">Amora, Seixal Waterfront Estate</h3>
+        <p class="home-opportunity__summary with-heading-offset">{{ opportunity.summary }}</p>
+        <div class="home-opportunity__actions with-heading-offset">
           <a class="btn btn-primary" href="/land-opportunity/">Explore Current Opportunity</a>
         </div>
       </div>

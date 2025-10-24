@@ -131,22 +131,10 @@
   max-width: 960px;
 }
 
-.snapshot .eyebrow,
-.connectivity .eyebrow,
-.value-path .eyebrow {
-  margin: 0;
-  font-size: clamp(0.82rem, 1.8vw, 0.96rem);
-  letter-spacing: 0.1em;
-  color: var(--ink-500);
-}
-
-.snapshot .section-title,
-.connectivity .section-title,
-.value-path .section-title {
-  margin: 0;
-  font-size: var(--fs-h2);
-  line-height: var(--lh-tight);
-  color: var(--ink-900);
+.snapshot__body .section-heading,
+.connectivity__body .section-heading,
+.value-path__body .section-heading {
+  margin-bottom: clamp(18px, 3vw, 24px);
 }
 
 .snapshot__chips {
