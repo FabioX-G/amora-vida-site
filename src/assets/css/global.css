@@ -551,6 +551,31 @@ strong {
   outline-offset: 3px;
 }
 
+@media (max-width: 480px) {
+  .brand-name {
+    display: none;
+  }
+
+  .brand {
+    min-width: 36px;
+  }
+
+  .nav-scroll {
+    padding-inline: clamp(8px, 5vw, 14px);
+  }
+
+  .nav-link {
+    font-size: clamp(14px, 3.8vw, 16px);
+    padding-block: 12px;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 960px) {
+  .brand-name {
+    display: inline-block;
+  }
+}
+
 @media (min-width: 960px) {
   .global-header::before,
   .global-header::after {
