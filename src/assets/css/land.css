@@ -12,7 +12,7 @@
   height: min(76vh, 760px);
   padding: clamp(48px, 12vh, 60px);
   margin: 0;
-  background: url('/assets/images/LandScapeOverview1.jpg') center/cover no-repeat;
+  background: url('/assets/images/LandScapeOverview1.jpg') left bottom / cover no-repeat;
   color: rgba(255, 255, 255, 0.95);
   overflow: hidden;
   transform: translateZ(0);
@@ -89,7 +89,7 @@
 @media (min-width: 900px) {
   .land-hero {
     background-attachment: fixed;
-    background-position: center top;
+    background-position: left bottom;
   }
 }
 

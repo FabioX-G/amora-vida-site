@@ -54,18 +54,33 @@ team:
       alt: "Portrait of Ana Karina Peixoto"
 ---
 <div class="index-main">
-  <section class="section section--slab hero hero--cinematic">
+  <section class="section hero hero--cinematic">
+    <figure class="hero__backdrop">
+      <picture>
+        <!-- Desktop / large -->
+        <source media="(min-width: 1280px)"
+                srcset="/assets/images/hero/river-overview@2x.jpg 2x,
+                        /assets/images/hero/river-overview.jpg 1x">
+        <!-- Tablet -->
+        <source media="(min-width: 768px)"
+                srcset="/assets/images/hero/river-overview-tablet.jpg">
+        <!-- Mobile -->
+        <img src="/assets/images/hero/river-overview-mobile.jpg"
+             alt="Panoramic view of Amora–Seixal riverfront with greenery and water"
+             loading="eager" fetchpriority="high" decoding="async">
+      </picture>
+    </figure>
+
     <div class="container hero__grid">
       <div class="hero__copy">
         <h1 class="hero__headline">
-          Inspired by Nature,<br class="hide-mobile"> <span class="hero__accent">Built for Life.</span>
+          Inspired by Nature, <span class="hero__accent">Built for Life.</span>
         </h1>
         <p class="hero__lead">
           Amora Vida acquires, develops, and exits strategic land projects in Greater Lisbon.
         </p>
       </div>
     </div>
-    <span class="sr-only">Panoramic view of Amora–Seixal riverfront with greenery and water.</span>
   </section>
 
   <section id="home-opportunity" class="section section--base home-opportunity">

@@ -472,23 +472,27 @@ strong {
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: clamp(10px, 2vw, 16px);
   text-decoration: none;
 }
 
-.brand-icon {
+.brand-icon,
+.footer-logo {
   display: block;
-  height: 26px;
-  width: auto;
+  width: clamp(36px, 5vw, 52px);
+  height: clamp(36px, 5vw, 52px);
+  border-radius: 12px;
+  object-fit: cover;
 }
 
- .brand-name {
+.brand-name {
   font-family: var(--font-logo);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   font-weight: 600;
   color: var(--brand-strong);
   line-height: 1;
+  font-size: clamp(14px, 3vw, 18px);
 }
 
 .nav-scroll {
@@ -773,9 +777,6 @@ select {
 }
 
 .footer-logo {
-  width: clamp(40px, 4vw, 52px);
-  height: auto;
-  border-radius: 12px;
   box-shadow: 0 12px 32px -22px rgba(13, 33, 58, 0.28);
 }
 
