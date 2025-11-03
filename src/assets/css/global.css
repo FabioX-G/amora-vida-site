@@ -469,6 +469,12 @@ strong {
   gap: clamp(10px, 2vw, 16px);
 }
 
+@media (max-width: 640px) {
+  .nav-inner {
+    padding-block: clamp(6px, 3vw, 10px);
+  }
+}
+
 .brand {
   display: flex;
   align-items: center;
