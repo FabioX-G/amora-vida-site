@@ -95,7 +95,7 @@ team:
         <img class="is-primary-visual" src="{{ opportunity.image.src }}" alt="{{ opportunity.image.alt }}" loading="lazy" width="960" height="640">
       </figure>
       <div class="home-opportunity__content copy">
-        <h2 class="section-heading">Current Opportunity</h2>
+        <h2 class="section-title">Current Opportunity</h2>
         <h3 class="home-opportunity__title with-heading-offset">Amora, Seixal Waterfront Estate</h3>
         <p class="home-opportunity__summary with-heading-offset">{{ opportunity.summary }}</p>
         <div class="home-opportunity__actions with-heading-offset">
@@ -107,7 +107,7 @@ team:
 
   <section id="home-market" class="section section--slab home-market">
     <div class="container home-market__body">
-      <h2 class="section-heading">{{ market.heading }}</h2>
+      <h2 class="section-title">{{ market.heading }}</h2>
       <div class="home-market__grid">
         <figure class="home-market__visual map-card">
           <img class="is-primary-visual" src="{{ market.visual.src }}" alt="{{ market.visual.alt }}" loading="lazy" width="960" height="640">
@@ -122,7 +122,7 @@ team:
 
   <section id="home-approach" class="section section--base home-approach">
     <div class="container">
-      <h2 class="section-heading">{{ approach.heading }}</h2>
+      <h2 class="section-title">{{ approach.heading }}</h2>
       <div class="overview-grid overview-grid--simple">
         {% for item in approach.items %}
         <article class="overview-card overview-card--simple approach-card">
@@ -137,7 +137,7 @@ team:
 
   <section id="home-team" class="section section--slab team-preview">
     <div class="container team-preview__container">
-      <h2 class="section-heading">{{ team.heading }}</h2>
+      <h2 class="section-title">{{ team.heading }}</h2>
       <div class="team-preview__grid leadership-cards">
         {% for person in team.members %}
         <article class="team-preview__card leader-card">

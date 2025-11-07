@@ -18,11 +18,6 @@
   border-bottom: 1px solid var(--stroke-100);
 }
 
-/* Section chrome */
-.section-heading {
-  display: none;
-}
-
 .section-title {
   margin-bottom: 12px;
 }

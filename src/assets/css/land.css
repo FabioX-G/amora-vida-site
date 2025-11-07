@@ -131,9 +131,9 @@
   max-width: 960px;
 }
 
-.snapshot__body .section-heading,
-.connectivity__body .section-heading,
-.value-path__body .section-heading {
+.snapshot__body .section-title,
+.connectivity__body .section-title,
+.value-path__body .section-title {
   margin-bottom: clamp(18px, 3vw, 24px);
 }
 
