@@ -48,6 +48,7 @@
   --container-width: min(1140px, 92vw);
   --container-wide: min(1280px, 92vw);
   --container-tight: min(720px, 92vw);
+  --header-h: var(--site-header-height, 88px);
   --section-indicator-width: clamp(4px, 0.55vw, 6px);
   --section-indicator-height: clamp(1.2em, 2.8vw, 1.7em);
   --section-indicator-gap: clamp(10px, 1.5vw, 16px);
@@ -764,10 +765,11 @@ select {
 
 /* Footer */
 .global-footer {
-  background: #f6f8fb;
-  border-top: 1px solid rgba(13, 33, 58, 0.08);
+  background: var(--surface-1);
+  border-top: 1px solid color-mix(in srgb, var(--stroke-100) 90%, rgba(12, 36, 58, 0.08) 10%);
   padding: clamp(24px, 4vw, 36px) clamp(18px, 5vw, 32px);
-  color: rgba(12, 36, 58, 0.78);
+  color: var(--ink-900);
+  box-shadow: 0 -8px 24px rgba(10, 18, 28, 0.05);
 }
 
 .footer-shell {
@@ -795,7 +797,7 @@ select {
 .footer-copy {
   font-size: 0.9rem;
   letter-spacing: 0.02em;
-  color: rgba(12, 36, 58, 0.6);
+  color: color-mix(in srgb, var(--ink-900) 72%, var(--ink-700) 28%);
 }
 
 @media (max-width: 640px) {
