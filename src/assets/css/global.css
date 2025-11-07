@@ -48,8 +48,11 @@
   --container-width: min(1140px, 92vw);
   --container-wide: min(1280px, 92vw);
   --container-tight: min(720px, 92vw);
-  --section-heading-offset: clamp(18px, 2.8vw, 28px);
-  --section-heading-gradient: linear-gradient(135deg, #1ac8ff 0%, #26e0c1 45%, #7189ff 100%);
+  --section-indicator-width: clamp(4px, 0.55vw, 6px);
+  --section-indicator-height: clamp(1.2em, 2.8vw, 1.7em);
+  --section-indicator-gap: clamp(10px, 1.5vw, 16px);
+  --section-heading-offset: calc(var(--section-indicator-width) + var(--section-indicator-gap));
+  --section-heading-gradient: linear-gradient(180deg, var(--brand) 0%, var(--accent) 100%);
 
   --transition-base: 180ms ease;
   --transition-slow: 320ms ease;
@@ -268,9 +271,11 @@ strong {
 .section-heading,
 .section-title {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--section-indicator-gap);
   margin: 0 0 clamp(18px, 3vw, 26px);
-  padding-inline-start: var(--section-heading-offset);
+  padding-inline-start: 0;
   font-family: var(--font-display);
   font-size: clamp(1.25rem, 2.3vw, 1.45rem);
   line-height: 1.28;
@@ -283,12 +288,12 @@ strong {
 .section-heading::before,
 .section-title::before {
   content: '';
-  position: absolute;
-  inset-block: 0;
-  inset-inline-start: 0;
-  width: 4px;
-  border-radius: 999px;
+  display: inline-block;
+  width: var(--section-indicator-width);
+  height: var(--section-indicator-height);
+  border-radius: 6px;
   background: var(--section-heading-gradient);
+  flex-shrink: 0;
 }
 
 .section-title {
@@ -297,12 +302,6 @@ strong {
 
 .with-heading-offset {
   padding-inline-start: var(--section-heading-offset);
-}
-
-@media (max-width: 640px) {
-  .with-heading-offset {
-    padding-inline-start: 0;
-  }
 }
 
 .eyebrow {
@@ -451,7 +450,7 @@ strong {
 .global-header {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 90;
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(6px) saturate(140%);
   border-bottom: 1px solid rgba(13, 33, 58, 0.08);
